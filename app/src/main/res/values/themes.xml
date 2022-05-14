@@ -28,4 +28,9 @@
         <!-- Customize your theme here. -->
         <item name="elevation">0dp</item>
     </style>
+
+    <style name="default_margin">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
 </resources>

@@ -27,4 +27,27 @@
     <string name="title_capfits">Capfits</string>
     <string name="title_transaksi">Transaksi</string>
     <string name="title_profil">Profil</string>
+
+    <!-- HOME -->
+    <string name="search">Cari outfit</string>
+    <string name="title_kategori">Kategori</string>
+    <string name="title_fashionista">Pilihan dari fashionista favoritmu</string>
+    <string name="see_more">Lihat lainnya</string>
+    <string name="title_populer">Populer saat ini</string>
+    <string name="title_style">Temukan style yang kamu sukai</string>
+    <string name="title_faq">FAQ</string>
+
+    <!-- CATEGORY -->
+    <string name="kat_prom">Prom</string>
+    <string name="kat_wedding">Wedding</string>
+    <string name="kat_graduation">Graduation</string>
+    <string name="kat_wfh">WFH</string>
+    <string name="kat_weekend">Weekend</string>
+    <string name="kat_staycation">Staycation</string>
+
+    <!-- STYLE -->
+    <string name="style_vintage">Vintage</string>
+    <string name="style_casual">Casual</string>
+    <string name="style_feminine">Feminine</string>
+    <string name="style_classic">Classic</string>
 </resources>

@@ -10,4 +10,5 @@
     <color name="black_font">#262626</color>
     <color name="gray_font">#999999</color>
     <color name="background">#FAFAFA</color>
+    <color name="transparent">#00000000</color>
 </resources>
