@@ -50,4 +50,11 @@
     <string name="style_casual">Casual</string>
     <string name="style_feminine">Feminine</string>
     <string name="style_classic">Classic</string>
+
+    <!-- USER -->
+    <string name="user1">Haylie Lipshutz</string>
+    <string name="user2">Shilta Inda</string>
+    <string name="user3">Maren Lubin</string>
+    <string name="user4">Alena Korsgaard</string>
+
 </resources>
