@@ -60,158 +60,158 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleKategori">
 
-            <LinearLayout
-                android:id="@+id/kategori"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleKategori">
-
                 <LinearLayout
-                    android:id="@+id/katProm"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/kategori"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleKategori">
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
-
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katProm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_prom"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWedding"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_prom" />
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_wedding" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_prom"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWedding"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_wedding"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katGraduation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_wedding" />
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_graduation" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_wedding"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katGraduation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_graduation"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWfh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_graduation" />
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_wfh" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_graduation"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWfh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_wfh"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWeekend"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_wfh" />
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_weekend" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_wfh"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWeekend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_weekend"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katStaycation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_weekend" />
 
-                    <ImageView
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_staycation" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_weekend"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katStaycation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_staycation"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_staycation" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_staycation"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
@@ -408,24 +408,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/styleCard1">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_vintage"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_casual"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -480,24 +480,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/styleCard2">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_feminine"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_classic"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <Button
@@ -528,62 +528,74 @@
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/buttonMoreStyle" />
 
-            <LinearLayout
-                android:id="@+id/faq"
+            <HorizontalScrollView
+                android:id="@+id/scrollFaq"
+                style="@style/default_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:scrollbars="none"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleFaq">
 
-            <LinearLayout
-                android:id="@+id/faqSewa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    style="@style/default_margin"
-                    android:layout_width="180dp"
-                    android:adjustViewBounds="true"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/faq1" />
-            </LinearLayout>
-
                 <LinearLayout
-                    android:id="@+id/faqLayanan"
+                    android:id="@+id/faq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleFaq">
 
-                    <ImageView
-                        style="@style/default_margin"
+                    <LinearLayout
+                        android:id="@+id/faqSewa"
                         android:layout_width="180dp"
-                        android:adjustViewBounds="true"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/faq2" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/faqReturn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq1" />
+                    </LinearLayout>
 
-                    <ImageView
-                        style="@style/default_margin"
+                    <LinearLayout
+                        android:id="@+id/faqLayanan"
                         android:layout_width="180dp"
-                        android:adjustViewBounds="true"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/faq3" />
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/faqReturn"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq3" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
