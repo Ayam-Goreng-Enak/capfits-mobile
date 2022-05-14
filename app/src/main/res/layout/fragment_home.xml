@@ -52,6 +52,14 @@
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/homeSlider" />
 
+            <HorizontalScrollView
+                android:id="@+id/scrollKategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleKategori">
+
             <LinearLayout
                 android:id="@+id/kategori"
                 android:layout_width="match_parent"
@@ -180,28 +188,31 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <!--        <LinearLayout-->
-                <!--            android:id="@+id/katStaycation"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:gravity="center"-->
-                <!--            android:orientation="vertical"-->
-                <!--            android:layout_marginTop="16dp">-->
-                <!--            <Button-->
-                <!--                style="@style/default_margin"-->
-                <!--                android:layout_width="56dp"-->
-                <!--                android:layout_height="56dp"-->
-                <!--                android:background="@drawable/kat_prom" />-->
-                <!--            <TextView-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:text="@string/kat_staycation"-->
-                <!--                android:fontFamily="@font/poppins_regular"-->
-                <!--                android:textSize="12sp"-->
-                <!--                android:layout_marginTop="8dp"-->
-                <!--                android:textColor="@color/black_font"/>-->
-                <!--        </LinearLayout>-->
+                <LinearLayout
+                    android:id="@+id/katStaycation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/default_margin"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/kat_staycation" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/kat_staycation"
+                        android:textColor="@color/black_font"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
+            </HorizontalScrollView>
 
             <TextView
                 android:id="@+id/titleFashionista"
@@ -213,7 +224,7 @@
                 android:text="@string/title_fashionista"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/kategori" />
+                app:layout_constraintTop_toBottomOf="@id/scrollKategori" />
 
             <LinearLayout
                 android:id="@+id/fashionCard1"
