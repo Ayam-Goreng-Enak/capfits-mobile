@@ -4,9 +4,11 @@
     <!-- AUTH -->
     <string name="login_title">Selamat datang di Capfits</string>
     <string name="login_subtitle">Masuk untuk melanjutkan</string>
-    <string name="email" translatable="false">Email</string>
-    <string name="password" translatable="false">Password</string>
-    <string name="name" translatable="false">Nama</string>
+    <string name="daftar_title">Buat akunmu</string>
+    <string name="daftar_subtitle">Mulai jelajahi trend outfit terkini</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Nama</string>
     <string name="login_account">Belum punya akun?&#160;</string>
     <string name="daftar_account">Sudah punya akun?&#160;</string>
     <string name="daftar">Daftar</string>
