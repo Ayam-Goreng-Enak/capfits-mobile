@@ -17,5 +17,11 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        binding.buttonLogin.setOnClickListener {
+            Intent(this@LoginActivity, HomeActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 }

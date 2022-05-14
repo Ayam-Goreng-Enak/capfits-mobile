@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capfits.NoActionBar">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name=".DaftarActivity"
             android:exported="false" />
         <activity

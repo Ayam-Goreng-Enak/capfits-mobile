@@ -19,4 +19,12 @@
     <string name="incorrect_password">Password must be at least 6 character in length</string>
     <string name="empty_email">Email cannot be empty</string>
     <string name="incorrect_email">Incorrect email format</string>
+
+    <!-- NAVIGATION -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_wishlist">Wishlist</string>
+    <string name="title_capfits">Capfits</string>
+    <string name="title_transaksi">Transaksi</string>
+    <string name="title_profil">Profil</string>
 </resources>
