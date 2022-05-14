@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Capfits</string>
+
+    <!-- AUTH -->
+    <string name="login_title">Selamat datang di Capfits</string>
+    <string name="login_subtitle">Masuk untuk melanjutkan</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="name" translatable="false">Nama</string>
+    <string name="login_account">Belum punya akun?&#160;</string>
+    <string name="daftar_account">Sudah punya akun?&#160;</string>
+    <string name="daftar">Daftar</string>
+    <string name="login">Masuk</string>
+
+    <!-- VALIDATION -->
+    <string name="empty_password">Password cannot be empty</string>
+    <string name="incorrect_password">Password must be at least 6 character in length</string>
+    <string name="empty_email">Email cannot be empty</string>
+    <string name="incorrect_email">Incorrect email format</string>
 </resources>
