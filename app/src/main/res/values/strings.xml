@@ -57,4 +57,7 @@
     <string name="user3">Maren Lubin</string>
     <string name="user4">Alena Korsgaard</string>
 
+    <!-- DETAIL KATEGORI -->
+    <string name="wedding">Wedding</string>
+
 </resources>

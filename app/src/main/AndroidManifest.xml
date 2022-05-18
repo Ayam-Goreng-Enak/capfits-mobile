@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capfits.NoActionBar">
         <activity
+            android:name=".CategoryDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />
