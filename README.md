@@ -16,7 +16,8 @@ to-do:
 - change login and register background color
 - home
   - ✅ fix black drawable in category section 
-  - add black overlay fashionista section
-  - add photo and name of fashionista
+  - ✅ add black overlay fashionista section
+  - ✅ add photo and name of fashionista
   - ✅ horizontal scroll for category
   - ✅ horizontal scroll for faq
+  - home slider
