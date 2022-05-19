@@ -46,162 +46,173 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/title_kategori"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/homeSlider" />
 
-            <LinearLayout
-                android:id="@+id/kategori"
+            <HorizontalScrollView
+                android:id="@+id/scrollKategori"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:scrollbars="none"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleKategori">
 
                 <LinearLayout
-                    android:id="@+id/katProm"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/kategori"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleKategori">
 
-                    <Button
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
-
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katProm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_prom"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWedding"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_prom" />
 
-                    <Button
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_prom"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWedding"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_wedding"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katGraduation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_wedding" />
 
-                    <Button
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_wedding"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katGraduation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_graduation"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWfh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_graduation" />
 
-                    <Button
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_graduation"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWfh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_wfh"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/katWeekend"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_wfh" />
 
-                    <Button
-                        style="@style/default_margin"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/kat_prom" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_wfh"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/katWeekend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/kat_weekend"
-                        android:textColor="@color/black_font"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <!--        <LinearLayout-->
-                <!--            android:id="@+id/katStaycation"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:gravity="center"-->
-                <!--            android:orientation="vertical"-->
-                <!--            android:layout_marginTop="16dp">-->
-                <!--            <Button-->
-                <!--                style="@style/default_margin"-->
-                <!--                android:layout_width="56dp"-->
-                <!--                android:layout_height="56dp"-->
-                <!--                android:background="@drawable/kat_prom" />-->
-                <!--            <TextView-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:text="@string/kat_staycation"-->
-                <!--                android:fontFamily="@font/poppins_regular"-->
-                <!--                android:textSize="12sp"-->
-                <!--                android:layout_marginTop="8dp"-->
-                <!--                android:textColor="@color/black_font"/>-->
-                <!--        </LinearLayout>-->
-            </LinearLayout>
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_weekend" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_weekend"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/katStaycation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/kat_staycation" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/kat_staycation"
+                            android:textColor="@color/black_font"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <TextView
                 android:id="@+id/titleFashionista"
@@ -209,11 +220,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/title_fashionista"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/kategori" />
+                app:layout_constraintTop_toBottomOf="@id/scrollKategori" />
 
             <LinearLayout
                 android:id="@+id/fashionCard1"
@@ -237,6 +248,40 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/fashion1" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/gradient" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imageUser1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/user1"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -252,6 +297,38 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/fashion2" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/gradient" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imageUser2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/user2"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -277,6 +354,38 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/fashion3" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/gradient" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imageUser3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/user3"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -292,6 +401,38 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/fashion4" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/gradient" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imageUser4"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/user4"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -317,7 +458,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/title_populer"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
@@ -339,7 +480,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/title_style"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
@@ -397,24 +538,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/styleCard1">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_vintage"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_casual"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -469,24 +610,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/styleCard2">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_feminine"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:textColor="@color/black_font"
+                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/style_classic"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/black_font"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <Button
@@ -511,11 +652,80 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/title_faq"
                 android:textColor="@color/black_font"
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/buttonMoreStyle" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollFaq"
+                style="@style/default_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleFaq">
+
+                <LinearLayout
+                    android:id="@+id/faq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleFaq">
+
+                    <LinearLayout
+                        android:id="@+id/faqSewa"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/faqLayanan"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/faqReturn"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/default_margin"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/faq3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
