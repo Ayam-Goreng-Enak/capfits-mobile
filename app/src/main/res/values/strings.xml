@@ -60,4 +60,7 @@
     <!-- DETAIL KATEGORI -->
     <string name="wedding">Wedding</string>
 
+    <!-- RESULT -->
+    <string name="more_like">More like this</string>
+    <string name="title_result">Result</string>
 </resources>
