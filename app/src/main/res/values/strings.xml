@@ -63,4 +63,20 @@
     <!-- RESULT -->
     <string name="more_like">More like this</string>
     <string name="title_result">Result</string>
+
+    <!-- DETAIL PRODUCT -->
+    <string name="lokasi">Denpasar</string>
+    <string name="lihat_lain">Lihat item lainnya</string>
+    <string name="desc">Description</string>
+    <string name="isi_desc">Fresh and floaty, our Eve bridal dress is adorned with delicate embellishments, making your special day even more perfect. The beautiful yet subtle flare on her skirt should skim the floor as you glide down the aisle, and can be altered by a seamstress for the perfect length.</string>
+    <string name="detail">Detail Produk</string>
+    <string name="isi_detail1"># Outer. 100% Recycled Polyester Lining. 100% Recycled Polyester</string>
+    <string name="isi_detail2"># Machine Wash</string>
+    <string name="isi_detail3"># Recycled Polyester</string>
+    <string name="isi_detail4"># Zip Fastening</string>
+    <string name="size_guide">Size Guide</string>
+    <string name="dapat_disewa">Dapat Disewa</string>
+    <string name="harga">Rp 2,000,0000</string>
+    <string name="btn_keranjang">+ Keranjang</string>
+
 </resources>
