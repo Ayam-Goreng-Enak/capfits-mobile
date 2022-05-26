@@ -22,4 +22,11 @@
         android:name="com.ayamgorengenak.capfits.ui.notifications.NotificationsFragment"
         android:label="@string/title_capfits"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.ayamgorengenak.capfits.ui.notifications.ResultFragment"
+        android:label="@string/title_result"
+        tools:layout="@layout/fragment_notifications" />
+
 </navigation>
