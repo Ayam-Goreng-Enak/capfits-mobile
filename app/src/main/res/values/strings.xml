@@ -78,5 +78,22 @@
     <string name="dapat_disewa">Dapat Disewa</string>
     <string name="harga">Rp 2,000,0000</string>
     <string name="btn_keranjang">+ Keranjang</string>
+    <!-- DETAIL PRODUCT TABLE -->
+    <string name="size_guide_table">Size</string>
+    <string name="size_s">S</string>
+    <string name="size_m">M</string>
+    <string name="size_l">L</string>
+    <string name="size_waist">Waist</string>
+    <string name="waist_s">64 cm</string>
+    <string name="waist_m">68 cm</string>
+    <string name="waist_l">72 cm</string>
+    <string name="hip_s">90 cm</string>
+    <string name="hip_m">94 cm</string>
+    <string name="hip_l">98 cm</string>
+    <string name="length_s">60 cm</string>
+    <string name="length_m">62 cm</string>
+    <string name="length_l">64 cm</string>
+    <string name="size_hip">Hip</string>
+    <string name="size_length">Length</string>
 
 </resources>
