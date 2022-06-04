@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ayamgorengenak.capfits.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class CameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -21,15 +21,15 @@ class HomeActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_home)
-//         Passing each menu ID as a set of Ids because each
-//         menu should be considered as top level destinations.
+        val navController = findNavController(R.id.nav_host_fragment_activity_camera)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_wishlist, R.id.navigation_capfits
             )
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+//        navView.setupWithNavController(navController)
     }
 }

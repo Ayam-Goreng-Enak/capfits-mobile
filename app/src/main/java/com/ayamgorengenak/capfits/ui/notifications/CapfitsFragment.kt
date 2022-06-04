@@ -13,12 +13,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.databinding.FragmentCapfitsBinding
 import com.ayamgorengenak.capfits.databinding.FragmentNotificationsBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class NotificationsFragment : Fragment() {
+class CapfitsFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentCapfitsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +33,7 @@ class NotificationsFragment : Fragment() {
         val notificationsViewModel =
             ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentCapfitsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 
@@ -45,6 +46,9 @@ class NotificationsFragment : Fragment() {
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 
+        val navView: BottomNavigationView = binding.navView
+
+        val navController = findNavController(R.id.nav_host_fragment_activity_home)
 
         val textView: TextView = binding.textNotifications
         notificationsViewModel.text.observe(viewLifecycleOwner) {

@@ -19,14 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_capfits"
-        android:name="com.ayamgorengenak.capfits.ui.notifications.NotificationsFragment"
+        android:name="com.ayamgorengenak.capfits.ui.notifications.CapfitsFragment"
         android:label="@string/title_capfits"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
-        android:id="@+id/navigation_result"
-        android:name="com.ayamgorengenak.capfits.ui.notifications.ResultFragment"
-        android:label="@string/title_result"
-        tools:layout="@layout/fragment_notifications" />
-
+        tools:layout="@layout/fragment_capfits" />
 </navigation>

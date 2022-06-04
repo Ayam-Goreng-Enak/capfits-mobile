@@ -9,18 +9,18 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModelProvider
 import com.ayamgorengenak.capfits.backend.ApiConfig
 import com.ayamgorengenak.capfits.backend.UserRequest
 import com.ayamgorengenak.capfits.backend.UserResponse
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.ayamgorengenak.capfits.databinding.ActivityLoginBinding
 import com.ayamgorengenak.capfits.ui.LoginViewModel
 import com.ayamgorengenak.capfits.ui.UserPreference
 import com.ayamgorengenak.capfits.ui.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Response
-
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -33,18 +33,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         setupViewModel()
         setupAction()
 
         binding.buttonDaftar.setOnClickListener {
             Intent(this@LoginActivity, DaftarActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-
-        binding.buttonLogin.setOnClickListener {
-            Intent(this@LoginActivity, HomeActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -75,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val user = response.body()
                     if (user != null) {
-                        Log.e("name", user.loginResult?.name.toString())
+                        Log.e("nama", user.loginResult?.nama.toString())
                         Log.e("token", user.loginResult?.token.toString())
                     }
 
@@ -100,13 +93,17 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                Intent(this@LoginActivity, HomeActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
                 Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
         })
     }
 
     fun success() {
-        Intent(this@LoginActivity, MainActivity::class.java).also {
+        Intent(this@LoginActivity, HomeActivity::class.java).also {
             startActivity(it)
             finish()
         }

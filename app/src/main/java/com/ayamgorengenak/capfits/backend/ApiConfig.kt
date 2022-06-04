@@ -15,7 +15,7 @@ class ApiConfig {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
             }
             val client = OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
-            val retrofit = Retrofit.Builder().baseUrl("http://127.0.0.1:5000/login")
+                val retrofit = Retrofit.Builder().baseUrl("https://127.0.0.1:5000/login/")
                 .addConverterFactory(GsonConverterFactory.create()).client(client).build()
             return retrofit.create(ApiService::class.java)
         }

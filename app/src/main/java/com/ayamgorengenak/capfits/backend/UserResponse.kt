@@ -10,9 +10,9 @@ class UserResponse {
     var loginResult: User? = null
 
     class User {
-        @SerializedName("name")
+        @SerializedName("nama")
         @Expose
-        var name: String? = null
+        var nama: String? = null
 
         @SerializedName("token")
         @Expose
