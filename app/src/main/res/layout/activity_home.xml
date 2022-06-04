@@ -4,8 +4,7 @@
     android:id="@+id/container"
     android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minHeight="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            android:minHeight="?attr/actionBarSize"
             android:theme="@style/Theme.Capfits.NoActionBar">
 
             <ImageView

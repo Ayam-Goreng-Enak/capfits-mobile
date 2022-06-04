@@ -4,6 +4,7 @@
     android:id="@+id/nav_host_fragment_activity_camera"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
     android:layout_height="match_parent"
     tools:context=".ui.capture.CaptureFragment">
 
@@ -86,6 +87,4 @@
             android:layout_height="match_parent"
             app:srcCompat="@drawable/galery" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

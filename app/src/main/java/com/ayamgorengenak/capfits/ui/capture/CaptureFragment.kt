@@ -4,18 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ayamgorengenak.capfits.databinding.FragmentCaptureBinding
-import com.ayamgorengenak.capfits.databinding.FragmentDashboardBinding
+import com.google.android.material.appbar.AppBarLayout
+
 
 class CaptureFragment : Fragment() {
-
     private var _binding: FragmentCaptureBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,18 +20,23 @@ class CaptureFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        AppBarLayout.GONE
         val captureViewModel =
             ViewModelProvider(this)[CaptureViewModel::class.java]
-
         _binding = FragmentCaptureBinding.inflate(inflater, container, false)
 
-//        val textView: TextView = binding.textCapture
-//        captureViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return binding.root
     }
 
+//    override fun onResume() {
+//        super.onResume()
+//        (activity as CaptureFragment?)!!.supportActionBar!!.hide()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        (activity as CaptureFragment?)!!.supportActionBar!!.show()
+//    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
