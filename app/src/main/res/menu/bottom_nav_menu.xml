@@ -12,7 +12,7 @@
         android:title="@string/title_wishlist" />
 
     <item
-        android:id="@+id/navigation_capfits"
+        android:id="@+id/navigation_capture"
         android:icon="@drawable/ic_capfits"
         android:title="@string/title_capfits" />
 
