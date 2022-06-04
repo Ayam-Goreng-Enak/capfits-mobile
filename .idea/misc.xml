@@ -18,7 +18,7 @@
         <entry key="..\:/Android/Capfits/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.125" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_category_detail.xml" value="0.2128205128205128" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_daftar.xml" value="0.152" />
-        <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_detail_product.xml" value="0.2128205128205128" />
+        <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_detail_product.xml" value="0.3686158401184308" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -32,10 +32,6 @@
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/item_kategori.xml" value="0.1721311475409836" />
         <entry key="..\:/Android/Capfits/app/src/main/res/layout/item_result.xml" value="0.2128205128205128" />
         <entry key="..\:/Android/Capfits/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17291666666666666" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile/app/src/main/res/layout/activity_daftar.xml" value="0.18614130434782608" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile/app/src/main/res/layout/activity_detail_product.xml" value="0.176" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile/app/src/main/res/layout/activity_home.xml" value="0.18614130434782608" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile/app/src/main/res/layout/activity_login.xml" value="0.18614130434782608" />
       </map>
     </option>
   </component>
