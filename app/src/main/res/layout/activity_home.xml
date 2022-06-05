@@ -27,6 +27,7 @@
                 android:src="@drawable/capfits" />
 
             <Button
+                android:id="@+id/buttonNotifikasi"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end"
@@ -35,6 +36,7 @@
                 android:background="@drawable/ic_notifikasi" />
 
             <Button
+                android:id="@+id/buttonKeranjang"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end"
