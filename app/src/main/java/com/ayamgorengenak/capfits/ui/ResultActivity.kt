@@ -6,14 +6,22 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
 import com.ayamgorengenak.capfits.backend.FileUploadResponse
+import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
 import com.ayamgorengenak.capfits.utils.reduceFileImage
 import com.ayamgorengenak.capfits.utils.rotateBitmap
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -60,7 +68,20 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
+
+//        val story : MutableList<ListRekomendasiItem> =
+        val sheet = findViewById<LinearLayout>(R.id.sheet)
         setContentView(binding.root)
+//        getList(story)
+        setupRecyclerView()
+//        BottomSheetBehavior.from(sheet)
+
+        val listView = findViewById<RecyclerView>(R.id.rv_category)
+        val adapter = ListAdapter()
+        val item = (1..5).map { "item$it" }
+        adapter.setItems(item)
+
+        listView.adapter = adapter
 
         supportActionBar?.title = "Add Story"
 
@@ -78,6 +99,18 @@ class ResultActivity : AppCompatActivity() {
         )
         binding.resultCapture.setImageBitmap(result)
         uploadImage(ss)
+    }
+
+//    private fun getList(story: MutableList<ListRekomendasiItem>) {
+//        val storyAdapter = ListAdapter(story)
+//        binding.rvCategory.adapter = storyAdapter
+//    }
+    private fun setupRecyclerView() {
+        val layoutManager = LinearLayoutManager(this)
+        binding.rvCategory.layoutManager = layoutManager
+        binding.rvCategory.setHasFixedSize(true)
+        val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
+        binding.rvCategory.addItemDecoration(itemDecoration)
     }
 
     private fun uploadImage(ss: File) {

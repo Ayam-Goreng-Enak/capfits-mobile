@@ -7,31 +7,40 @@ import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
+import com.ayamgorengenak.capfits.databinding.ItemCategoryBinding
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-//class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
-//
-//    private var items: List<String> = mutableListOf()
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        return ViewHolder(
-//            LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
-//        )
-//    }
-//
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val text = items[position]
-//        holder.label. = text
-//
-//    }
-//
-//    override fun getItemCount(): Int = items.size
-//
-//    fun setItems(items: List<String>) {
-//        this.items = items
-//    }
-//
-//
-//    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val label: CardView = itemView.findViewById(R.id.cvCategory)
-//    }
-//}
+class ListAdapter(private val storyList: MutableList<ListRekomendasiItem>) :
+    RecyclerView.Adapter<ListAdapter.StoryViewHolder>() {
+
+    inner class StoryViewHolder(private val binding: ItemCategoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(story: ListRekomendasiItem) {
+
+
+            binding.apply {
+//                Glide.with(itemView).load(story.photoUrl)
+//                    .transition(DrawableTransitionOptions.withCrossFade()).centerCrop()
+//                    .into(photo)
+                titleProduct.text = story.nama_outfit
+                priceProduct.text = story.harga_sewa
+
+            }
+        }
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
+        val view = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return StoryViewHolder((view))
+    }
+
+    override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
+        holder.bind(storyList[position])
+    }
+
+    override fun getItemCount(): Int = storyList.size
+
+}
