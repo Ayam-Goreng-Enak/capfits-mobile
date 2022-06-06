@@ -13,13 +13,9 @@ interface ApiService {
     ): Call<UserResponse>
 
     @Multipart
-    @POST("stories")
+    @POST("recommend")
     fun uploadImage(
-        @Part file: MultipartBody.Part,
-        @Header("Authorization") token: String,
-        @Part("description") description: RequestBody,
+        @Part file: MultipartBody.Part
     ): Call<FileUploadResponse>
-
-
 
 }

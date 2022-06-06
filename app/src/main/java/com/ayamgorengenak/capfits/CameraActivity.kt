@@ -120,10 +120,7 @@ class CameraActivity : AppCompatActivity() {
                         "isBackCamera",
                         cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
                     )
-                    Log.e("token", "${photoFile.path}")
-//                    Intent(this@CameraActivity, ResultActivity::class.java).also {
-//                        startActivity(it)
-//                    }
+                    Log.e("cek", "${photoFile.path}")
                     setResult(ResultActivity.CAMERA_X_RESULT, intent)
                     startActivity(intent)
                     finish()

@@ -1,25 +1,32 @@
 package com.ayamgorengenak.capfits.ui
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.ayamgorengenak.capfits.CameraActivity
+import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
+import com.ayamgorengenak.capfits.backend.FileUploadResponse
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
+import com.ayamgorengenak.capfits.utils.reduceFileImage
 import com.ayamgorengenak.capfits.utils.rotateBitmap
-import com.ayamgorengenak.capfits.utils.uriToFile
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
+
+    private var ss: File? = null
 
     companion object {
         const val CAMERA_X_RESULT = 200
@@ -65,10 +72,69 @@ class ResultActivity : AppCompatActivity() {
             )
         }
 
-        val ss:File = intent.getSerializableExtra("picture") as File
+        val ss: File = intent.getSerializableExtra("picture") as File
         val result = rotateBitmap(
             BitmapFactory.decodeFile(ss.path)
         )
         binding.resultCapture.setImageBitmap(result)
+        uploadImage(ss)
+    }
+
+    private fun uploadImage(ss: File) {
+        Log.e("cek", "$ss")
+        if (ss != null) {
+            val file = reduceFileImage(ss as File)
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "photo",
+                file.name,
+                requestImageFile
+            )
+
+            val service = getApiService().uploadImage(imageMultipart)
+
+            service.enqueue(object : Callback<FileUploadResponse> {
+                override fun onResponse(
+                    call: Call<FileUploadResponse>,
+                    response: Response<FileUploadResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        Log.e("cek", "aaaaaaaaaa")
+//                            Intent(this@ResultActivity, MainActivity::class.java).also {
+//                                finish()
+//                            }
+                        val responseBody = response.body()
+                        if (responseBody != null && !responseBody.error) {
+                            Toast.makeText(
+                                this@ResultActivity,
+                                responseBody.message,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } else {
+                        Toast.makeText(
+                            this@ResultActivity,
+                            response.message(),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
+                    Log.e("cek", "aaaasdasdsdaaaaa")
+                    Toast.makeText(
+                        this@ResultActivity,
+                        "Cannot instance Retrofit",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
+        } else {
+            Toast.makeText(
+                this@ResultActivity,
+                "Input file first.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }
