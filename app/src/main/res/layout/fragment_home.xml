@@ -15,30 +15,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/searchBar"
-                style="@style/default_margin"
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/sectionSearch"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/ic_search"
-                android:drawablePadding="12dp"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="@string/search"
-                android:inputType="text"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:textSize="16sp"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/searchBar"
+                    style="@style/default_margin"
+                    android:layout_width="304dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/search"
+                    android:inputType="text"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_gravity="end"
+                android:id="@+id/buttonCapfits"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_capfits"
+                app:layout_constraintTop_toBottomOf="@id/searchBar" />
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/homeSlider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:src="@drawable/slider1"
-                app:layout_constraintTop_toBottomOf="@id/searchBar" />
+                app:layout_constraintTop_toBottomOf="@id/sectionSearch" />
 
             <TextView
                 android:id="@+id/titleKategori"

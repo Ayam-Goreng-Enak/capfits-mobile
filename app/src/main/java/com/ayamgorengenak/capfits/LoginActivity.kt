@@ -67,15 +67,15 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     val user = response.body()
-                    if (user != null) {
-                        Log.e("nama", user.loginResult?.nama.toString())
-                        Log.e("token", user.loginResult?.token.toString())
+                    if (user == null) {
+                        Log.e("nama", user?.loginResult?.nama.toString())
+                        Log.e("token", user?.loginResult?.token.toString())
                     }
 
                     Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
-                    if (user != null) {
-                        loginViewModel.saveUser(user.loginResult?.token!!)
-                    }
+//                    if (user != null) {
+//                        loginViewModel.saveUser(user.loginResult?.token!!)
+//                    }
                     success()
 
                 } else {
@@ -93,10 +93,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                Intent(this@LoginActivity, HomeActivity::class.java).also {
-                    startActivity(it)
-                    finish()
-                }
+//                Intent(this@LoginActivity, HomeActivity::class.java).also {
+//                    startActivity(it)
+//                    finish()
+//                }
                 Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
         })

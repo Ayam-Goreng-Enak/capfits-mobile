@@ -1,5 +1,6 @@
 package com.ayamgorengenak.capfits
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.Window
@@ -34,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if(destination.id == R.id.navigation_capture) {
+                startActivity(Intent(this@HomeActivity, CameraActivity::class.java))
                 navView.visibility = View.GONE
                 btnKeranjang.visibility = View.GONE
                 btnNotifikasi.visibility = View.GONE
