@@ -121,7 +121,9 @@ class ResultActivity : AppCompatActivity() {
     private fun uploadImage(ss: File) {
 //        Log.e("cek", "$ss")
         if (ss != null) {
-            val bitimg = BitmapFactory.decodeFile(ss.path)
+            val bitimg = rotateBitmap(
+                BitmapFactory.decodeFile(ss.path)
+            )
             val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
             bitimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream)
             val byteimg = byteArrayOutputStream.toByteArray()
