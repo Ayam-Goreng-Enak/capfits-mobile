@@ -2,9 +2,12 @@ package com.ayamgorengenak.capfits.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.ImageFormat.JPEG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -28,6 +31,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.ByteArrayOutputStream
 import java.io.File
 
 class ResultActivity : AppCompatActivity() {
@@ -35,6 +39,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
 
     private var ss: File? = null
+
 
     companion object {
         const val CAMERA_X_RESULT = 200
@@ -114,17 +119,15 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun uploadImage(ss: File) {
-        Log.e("cek", "$ss")
+//        Log.e("cek", "$ss")
         if (ss != null) {
-            val file = reduceFileImage(ss as File)
-            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-                "photo",
-                file.name,
-                requestImageFile
-            )
+            val bitimg = BitmapFactory.decodeFile(ss.path)
+            val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
+            bitimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream)
+            val byteimg = byteArrayOutputStream.toByteArray()
+            val encodedimg = android.util.Base64.encodeToString(byteimg,Base64.DEFAULT)
 
-            val service = getApiService().uploadImage(imageMultipart)
+            val service = getApiService().uploadImage(encodedimg)
 
             service.enqueue(object : Callback<FileUploadResponse> {
                 override fun onResponse(
@@ -132,7 +135,7 @@ class ResultActivity : AppCompatActivity() {
                     response: Response<FileUploadResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.e("cek", "aaaaaaaaaa")
+                        Log.e("cek", "bisaqa")
 //                            Intent(this@ResultActivity, MainActivity::class.java).also {
 //                                finish()
 //                            }
@@ -154,7 +157,7 @@ class ResultActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
-                    Log.e("cek", "aaaasdasdsdaaaaa")
+                    Log.e("cek", "thidaa")
                     Toast.makeText(
                         this@ResultActivity,
                         "Cannot instance Retrofit",

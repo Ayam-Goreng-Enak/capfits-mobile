@@ -12,10 +12,10 @@ interface ApiService {
         @Body userRequest: UserRequest
     ): Call<UserResponse>
 
-    @Multipart
+//    @Multipart
     @POST("recommend")
     fun uploadImage(
-        @Part file: MultipartBody.Part
+        @Body base64img: String
     ): Call<FileUploadResponse>
 
 }
