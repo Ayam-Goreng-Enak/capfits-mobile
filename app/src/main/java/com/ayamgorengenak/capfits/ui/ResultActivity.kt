@@ -175,7 +175,15 @@ class ResultActivity : AppCompatActivity() {
 //                                finish()
 //                            }
                         val responseBody = response.body()
+                        Log.e("ayam", responseBody.toString())
                         if (responseBody != null && !responseBody.error) {
+
+                            for (i in responseBody.listRekomendasi){
+                                Log.e("nama", i.nama_outfit)
+                                Log.e("token", i.harga_sewa)
+                            }
+
+
                             Toast.makeText(
                                 this@ResultActivity,
                                 responseBody.message,
