@@ -17,6 +17,9 @@ data class FileUploadResponse(
 
 @Parcelize
 data class ListRekomendasiItem(
+    @field:SerializedName("foto")
+    val foto: String,
+
     @field:SerializedName("nama_outfit")
     val nama_outfit: String,
 

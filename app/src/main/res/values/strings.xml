@@ -78,6 +78,7 @@
     <string name="dapat_disewa">Dapat Disewa</string>
     <string name="harga">Rp 2,000,0000</string>
     <string name="btn_keranjang">+ Keranjang</string>
+
     <!-- DETAIL PRODUCT TABLE -->
     <string name="size_guide_table">Size</string>
     <string name="size_s">S</string>
@@ -95,7 +96,61 @@
     <string name="length_l">64 cm</string>
     <string name="size_hip">Hip</string>
     <string name="size_length">Length</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- RECOMMEND DUMMY DATA -->
+    <string-array name="data_title">
+        <item>Ahmad Dahlan</item>
+        <item>Ahmad Yani</item>
+        <item>Sutomo</item>
+        <item>Gatot Soebroto</item>
+        <item>Ki Hadjar Dewantara</item>
+        <item>Mohammad Hatta</item>
+        <item>Soedirman</item>
+        <item>Soekarno</item>
+    </string-array>
+
+    <string-array name="data_price">
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+        <item>200,000,000</item>
+    </string-array>
+
+    <string-array name="data_location">
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+        <item>Denpasar</item>
+    </string-array>
+
+    <string-array name="data_star">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/cat1</item>
+        <item>@drawable/cat2</item>
+        <item>@drawable/cat3</item>
+        <item>@drawable/cat4</item>
+        <item>@drawable/cat5</item>
+        <item>@drawable/cat6</item>
+        <item>@drawable/cat7</item>
+        <item>@drawable/cat8</item>
+    </integer-array>
 </resources>

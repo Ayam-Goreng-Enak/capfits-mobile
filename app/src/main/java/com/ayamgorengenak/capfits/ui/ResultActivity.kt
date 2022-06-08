@@ -1,33 +1,29 @@
 package com.ayamgorengenak.capfits.ui
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.ImageFormat.JPEG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
 import com.ayamgorengenak.capfits.backend.FileUploadResponse
 import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
+import com.ayamgorengenak.capfits.backend.RecommendOutfit
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
-import com.ayamgorengenak.capfits.utils.reduceFileImage
 import com.ayamgorengenak.capfits.utils.rotateBitmap
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,6 +33,8 @@ import java.io.File
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
+    private lateinit var rvRecommend: RecyclerView
+    private val list = ArrayList<RecommendOutfit>()
 
     private var ss: File? = null
 
@@ -73,20 +71,27 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        rvRecommend = findViewById(R.id.rv_category)
+        rvRecommend.setHasFixedSize(true)
+
+        list.addAll(listRecommend)
+        showRecyclerList()
+
+        val sheet = findViewById<LinearLayout>(R.id.sheet)
 
 //        val story : MutableList<ListRekomendasiItem> =
-        val sheet = findViewById<LinearLayout>(R.id.sheet)
-        setContentView(binding.root)
 //        getList(story)
-        setupRecyclerView()
+//        setupRecyclerView()
 //        BottomSheetBehavior.from(sheet)
 
-        val listView = findViewById<RecyclerView>(R.id.rv_category)
-        val adapter = ListAdapter()
-        val item = (1..5).map { "item$it" }
-        adapter.setItems(item)
+//        val listView = findViewById<RecyclerView>(R.id.rv_category)
+//        val adapter = ListAdapter()
+//        val item = (1..5).map { "item$it" }
+//        adapter.setItems(item)
 
-        listView.adapter = adapter
+//        listView.adapter = adapter
 
         supportActionBar?.title = "Add Story"
 
@@ -107,9 +112,32 @@ class ResultActivity : AppCompatActivity() {
     }
 
 //    private fun getList(story: MutableList<ListRekomendasiItem>) {
-//        val storyAdapter = ListAdapter(story)
+//        val storyAdapter = ListRecommendAdapter(story)
 //        binding.rvCategory.adapter = storyAdapter
 //    }
+
+    private val listRecommend: ArrayList<RecommendOutfit>
+        get() {
+            val dataTitle = resources.getStringArray(R.array.data_title)
+            val dataPrice = resources.getStringArray(R.array.data_price)
+            val dataLocation = resources.getStringArray(R.array.data_location)
+            val dataStar = resources.getStringArray(R.array.data_star)
+            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+
+            val listRecommend = ArrayList<RecommendOutfit>()
+            for (i in dataTitle.indices) {
+                val recommend = RecommendOutfit(dataTitle[i], dataPrice[i], dataLocation[i], dataStar[i], dataPhoto.getResourceId(i, -1))
+                listRecommend.add(recommend)
+            }
+            return listRecommend
+        }
+
+    private fun showRecyclerList() {
+        rvRecommend.layoutManager = GridLayoutManager(this, 2)
+        val listRecommendAdapter = ListRecommendAdapter(list)
+        rvRecommend.adapter = listRecommendAdapter
+    }
+
     private fun setupRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvCategory.layoutManager = layoutManager
@@ -125,9 +153,9 @@ class ResultActivity : AppCompatActivity() {
                 BitmapFactory.decodeFile(ss.path)
             )
             val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
-            bitimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream)
+            bitimg.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
             val byteimg = byteArrayOutputStream.toByteArray()
-            val encodedimg = android.util.Base64.encodeToString(byteimg,Base64.DEFAULT)
+            val encodedimg = android.util.Base64.encodeToString(byteimg, Base64.DEFAULT)
 
             val service = getApiService().uploadImage(encodedimg)
 

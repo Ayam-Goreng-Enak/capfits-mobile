@@ -3,6 +3,7 @@
     package="com.ayamgorengenak.capfits">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -13,13 +14,16 @@
         android:maxSdkVersion="18" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Capfits.NoActionBar">
+        android:theme="@style/Theme.Capfits.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.ResultActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -36,13 +40,14 @@
             android:name=".DaftarActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ResultActivity"
+            android:name=".NyobaGambar"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
