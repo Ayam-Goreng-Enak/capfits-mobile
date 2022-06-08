@@ -1,12 +1,14 @@
 package com.ayamgorengenak.capfits.backend
 
 import android.os.Parcelable
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-data class FileUploadResponse(
-    @field:SerializedName("listRekomendasi")
-    val listRekomendasi: MutableList<ListRekomendasiItem>,
+class FileUploadResponse(
+    @field:SerializedName("data")
+    @Expose
+    val data: MutableList<ListRekomendasiItem>,
 
     @field:SerializedName("error")
     val error: Boolean,
@@ -17,21 +19,28 @@ data class FileUploadResponse(
 
 @Parcelize
 data class ListRekomendasiItem(
-    @field:SerializedName("foto")
+    @SerializedName("id_outfit")
+    @Expose
+    val id_outfit: Int,
+
+    @SerializedName("foto")
+    @Expose
     val foto: String,
 
-    @field:SerializedName("nama_outfit")
+    @SerializedName("nama_outfit")
+    @Expose
     val nama_outfit: String,
 
-    @field:SerializedName("harga_sewa")
-    val harga_sewa: String,
+    @SerializedName("harga_sewa")
+    @Expose
+    val harga_sewa: Int,
 
-    @field:SerializedName("lokasi")
+    @SerializedName("lokasi")
+    @Expose
     val lokasi: String,
 
-    @field:SerializedName("rating")
-    val rating: String,
+    @SerializedName("rating")
+    @Expose
+    val rating: Int,
 
-    @field:SerializedName("id_outfit")
-    val id_outfit: String,
 ) : Parcelable

@@ -1,5 +1,7 @@
 package com.ayamgorengenak.capfits.ui
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +13,7 @@ import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.backend.RecommendOutfit
 import com.ayamgorengenak.capfits.databinding.ItemCategoryBinding
 
-class ListRecommendAdapter(private val listRecommend: ArrayList<RecommendOutfit>) : RecyclerView.Adapter<ListRecommendAdapter.ListViewHolder>() {
+class ListRecommendAdapter(private val listRecommend: MutableList<ListRekomendasiItem>) : RecyclerView.Adapter<ListRecommendAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_result, parent, false)
@@ -19,12 +21,26 @@ class ListRecommendAdapter(private val listRecommend: ArrayList<RecommendOutfit>
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (nama_outfit, harga_sewa, lokasi, rating, foto) = listRecommend[position]
-        holder.imageProduct.setImageResource(foto)
+        val (id_outfit, foto, nama_outfit, harga_sewa, lokasi,rating) = listRecommend[position]
+//        holder.imageProduct.setImageBitmap(linkToBitmap(foto))
         holder.titleProduct.text = nama_outfit
-        holder.priceProduct.text = harga_sewa
+        holder.priceProduct.text = harga_sewa.toString()
         holder.locationProduct.text = lokasi
-        holder.starProduct.text = rating
+        holder.starProduct.text = rating.toString()
+    }
+
+    private fun linkToBitmap(urlimg:String): Bitmap? {
+        try {
+            val `in` = java.net.URL(urlimg).openStream()
+            var image = BitmapFactory.decodeStream(`in`)
+            return image
+        }
+        catch (e: Exception) {
+            e.printStackTrace()
+            val `in` = java.net.URL("https://storage.googleapis.com/bangkit-capfits.appspot.com/Allbaseimage/notfound.png?Expires=1686236488&GoogleAccessId=firebase-adminsdk-ir8od%40bangkit-capfits.iam.gserviceaccount.com&Signature=eNAH9Ck38n%2B9ErDHqeLFM%2FppazyJNfDG1FDOHc1JywrKMocIj%2FhsZDC4LAOiz8dq0eQIOGMBWxOivmtMBLWdKBtuLoZaCp3JQwTLl6ePqjk1OR%2BN3Jw%2B3NQVEplkKCZ8Vxfbmantm9NADpoYWn73FRP1S%2BoTSCaDDUk6GB7XH8X669FTKoUMrrvODOt9TwoHNAyctaDgoZinsAdXBBtoxRAWhEazw8Jk%2FLEea3jtZjWf5tQ6qtCo%2B6UFSfBFwf1deANFBTIy1Bculrogffs4Y2NuK4F2zJYKSgsEFH1Sl7eUY5HtcprdKWoECEG%2BV20pWlyKVOGuPOwmi69e9vMBXQ%3D%3D").openStream()
+            var image = BitmapFactory.decodeStream(`in`)
+            return image
+        }
     }
 
     override fun getItemCount(): Int = listRecommend.size

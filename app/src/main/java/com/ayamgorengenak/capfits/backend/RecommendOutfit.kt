@@ -7,8 +7,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class RecommendOutfit(
     var nama_outfit: String,
-    var harga_sewa: String,
+    var harga_sewa: Int,
     var lokasi: String,
-    val rating: String,
-    val foto: Int
+    val rating: Int,
+    val foto: String
 ) : Parcelable

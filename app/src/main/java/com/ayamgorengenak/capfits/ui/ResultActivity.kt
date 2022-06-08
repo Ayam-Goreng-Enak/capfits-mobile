@@ -6,7 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
@@ -21,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
 import com.ayamgorengenak.capfits.backend.FileUploadResponse
+import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.backend.RecommendOutfit
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
 import com.ayamgorengenak.capfits.utils.rotateBitmap
@@ -39,7 +39,6 @@ class ResultActivity : AppCompatActivity() {
     private val list = ArrayList<RecommendOutfit>()
 
     private var ss: File? = null
-
 
     companion object {
         const val CAMERA_X_RESULT = 200
@@ -78,8 +77,10 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend = findViewById(R.id.rv_category)
         rvRecommend.setHasFixedSize(true)
 
-        list.addAll(listRecommend)
-        showRecyclerList()
+//        if (listRecommend != null) {
+//            list.addAll(listRecommend)
+//        }
+//        showRecyclerList()
 
         val sheet = findViewById<LinearLayout>(R.id.sheet)
         val behavior: BottomSheetBehavior<*> = BottomSheetBehavior.from<View>(sheet)
@@ -116,30 +117,30 @@ class ResultActivity : AppCompatActivity() {
         uploadImage(ss)
     }
 
-//    private fun getList(story: MutableList<ListRekomendasiItem>) {
-//        val storyAdapter = ListRecommendAdapter(story)
-//        binding.rvCategory.adapter = storyAdapter
-//    }
+    private fun getList(rec: MutableList<ListRekomendasiItem>) {
+        val storyAdapter = ListRecommendAdapter(rec)
+        binding.rvCategory.adapter = storyAdapter
+    }
 
-    private val listRecommend: ArrayList<RecommendOutfit>
-        get() {
-            val dataTitle = resources.getStringArray(R.array.data_title)
-            val dataPrice = resources.getStringArray(R.array.data_price)
-            val dataLocation = resources.getStringArray(R.array.data_location)
-            val dataStar = resources.getStringArray(R.array.data_star)
-            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+//    private val listRecommend: ArrayList<ListRekomendasiItem>
+//        get() {
+//            val dataTitle = resources.getStringArray(R.array.data_title)
+//            val dataPrice = resources.getStringArray(R.array.data_price)
+//            val dataLocation = resources.getStringArray(R.array.data_location)
+//            val dataStar = resources.getStringArray(R.array.data_star)
+//            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+//
+//            val listRecommend = ArrayList<ListRekomendasiItem>()
+//            for (i in dataTitle.indices) {
+//                val recommend = ListRekomendasiItem(dataTitle[i], dataPrice[i].toInt(), dataLocation[i], dataStar[i].toInt(), dataPhoto.getResourceId(i, -1).toString())
+//                listRecommend.add(recommend)
+//            }
+//            return listRecommend
+//        }
 
-            val listRecommend = ArrayList<RecommendOutfit>()
-            for (i in dataTitle.indices) {
-                val recommend = RecommendOutfit(dataTitle[i], dataPrice[i], dataLocation[i], dataStar[i], dataPhoto.getResourceId(i, -1))
-                listRecommend.add(recommend)
-            }
-            return listRecommend
-        }
-
-    private fun showRecyclerList() {
+    private fun showRecyclerList(rec: MutableList<ListRekomendasiItem>) {
         rvRecommend.layoutManager = GridLayoutManager(this, 2)
-        val listRecommendAdapter = ListRecommendAdapter(list)
+        val listRecommendAdapter = ListRecommendAdapter(rec)
         rvRecommend.adapter = listRecommendAdapter
     }
 
@@ -175,15 +176,8 @@ class ResultActivity : AppCompatActivity() {
 //                                finish()
 //                            }
                         val responseBody = response.body()
-                        Log.e("ayam", responseBody.toString())
                         if (responseBody != null && !responseBody.error) {
-
-                            for (i in responseBody.listRekomendasi){
-                                Log.e("nama", i.nama_outfit)
-                                Log.e("token", i.harga_sewa)
-                            }
-
-
+                            showRecyclerList(responseBody.data)
                             Toast.makeText(
                                 this@ResultActivity,
                                 responseBody.message,
