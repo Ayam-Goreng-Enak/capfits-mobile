@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ResultActivity"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.ResultActivity">
 
     <ImageView
         android:id="@+id/resultCapture"
@@ -26,11 +26,10 @@
 
     <LinearLayout
         android:id="@+id/sheet"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-
+        android:layout_height="match_parent"
         android:background="@drawable/bg_radius"
+        android:orientation="vertical"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <TextView
@@ -63,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="ayam"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

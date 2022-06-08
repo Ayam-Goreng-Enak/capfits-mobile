@@ -1,16 +1,17 @@
 package com.ayamgorengenak.capfits.ui
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
+import android.util.DisplayMetrics
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -20,15 +21,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
 import com.ayamgorengenak.capfits.backend.FileUploadResponse
-import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.backend.RecommendOutfit
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
 import com.ayamgorengenak.capfits.utils.rotateBitmap
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.ByteArrayOutputStream
 import java.io.File
+
 
 class ResultActivity : AppCompatActivity() {
 
@@ -80,6 +82,9 @@ class ResultActivity : AppCompatActivity() {
         showRecyclerList()
 
         val sheet = findViewById<LinearLayout>(R.id.sheet)
+        val behavior: BottomSheetBehavior<*> = BottomSheetBehavior.from<View>(sheet)
+        behavior.peekHeight = 1000
+        behavior.maxHeight = 1700
 
 //        val story : MutableList<ListRekomendasiItem> =
 //        getList(story)
