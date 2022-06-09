@@ -81,10 +81,10 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/galeryCamera"
-            android:layout_width="match_parent"
+            android:id="@+id/buttonGallery"
+            android:layout_width="42dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/galery" />
+            app:srcCompat="@drawable/ic_gallery" />
     </LinearLayout>
 
 

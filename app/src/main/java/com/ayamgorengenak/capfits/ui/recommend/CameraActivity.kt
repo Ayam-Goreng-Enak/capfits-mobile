@@ -3,6 +3,8 @@ package com.ayamgorengenak.capfits.ui.recommend
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +12,7 @@ import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -19,12 +22,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.ayamgorengenak.capfits.databinding.ActivityCameraBinding
 import com.ayamgorengenak.capfits.utils.createFile
+import com.ayamgorengenak.capfits.utils.uriToFile
+import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
     private lateinit var cameraExecutor: ExecutorService
+
+    private var getFile: File? = null
 
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
     private var imageCapture: ImageCapture? = null
@@ -75,6 +82,7 @@ class CameraActivity : AppCompatActivity() {
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         binding.captureImage.setOnClickListener { takePhoto() }
+        binding.buttonGallery.setOnClickListener { startGallery() }
         binding.switchCamera.setOnClickListener {
             cameraSelector =
                 if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) CameraSelector.DEFAULT_FRONT_CAMERA
@@ -158,6 +166,31 @@ class CameraActivity : AppCompatActivity() {
                 ).show()
             }
         }, ContextCompat.getMainExecutor(this))
+    }
+
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+
+            val myFile = uriToFile(selectedImg, this@CameraActivity)
+            getFile = myFile
+
+            val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+            intent.putExtra("picture", getFile)
+            Log.e("cek galeri", "$getFile")
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun hideSystemUI() {
