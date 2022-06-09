@@ -1,4 +1,4 @@
-package com.ayamgorengenak.capfits
+package com.ayamgorengenak.capfits.ui.auth
 
 import android.content.ContentValues
 import android.content.Context
@@ -15,10 +15,10 @@ import com.ayamgorengenak.capfits.backend.UserRequest
 import com.ayamgorengenak.capfits.backend.UserResponse
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.ayamgorengenak.capfits.ui.home.HomeActivity
 import com.ayamgorengenak.capfits.databinding.ActivityLoginBinding
-import com.ayamgorengenak.capfits.ui.LoginViewModel
-import com.ayamgorengenak.capfits.ui.UserPreference
-import com.ayamgorengenak.capfits.ui.ViewModelFactory
+import com.ayamgorengenak.capfits.UserPreference
+import com.ayamgorengenak.capfits.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Response
 

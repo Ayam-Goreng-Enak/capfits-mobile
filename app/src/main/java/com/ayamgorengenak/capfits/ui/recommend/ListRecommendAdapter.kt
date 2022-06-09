@@ -1,23 +1,15 @@
-package com.ayamgorengenak.capfits.ui
+package com.ayamgorengenak.capfits.ui.recommend
 
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
-import com.ayamgorengenak.capfits.DetailProductActivity
-import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
-import com.ayamgorengenak.capfits.backend.RecommendOutfit
-import com.ayamgorengenak.capfits.databinding.ItemCategoryBinding
 import com.ayamgorengenak.capfits.databinding.ItemResultBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions

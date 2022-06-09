@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.ayamgorengenak.capfits.CameraActivity
-import com.ayamgorengenak.capfits.DaftarActivity
+import com.ayamgorengenak.capfits.ui.recommend.CameraActivity
 import com.ayamgorengenak.capfits.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

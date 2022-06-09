@@ -1,4 +1,4 @@
-package com.ayamgorengenak.capfits.ui
+package com.ayamgorengenak.capfits
 
 import android.util.Log
 import androidx.datastore.core.DataStore

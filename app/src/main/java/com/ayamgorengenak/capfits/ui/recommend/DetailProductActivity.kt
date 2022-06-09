@@ -1,8 +1,9 @@
 
-package com.ayamgorengenak.capfits
+package com.ayamgorengenak.capfits.ui.recommend
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ayamgorengenak.capfits.R
 
 class DetailProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

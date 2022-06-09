@@ -22,28 +22,28 @@
         android:theme="@style/Theme.Capfits.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.ResultActivity"
+            android:name=".ui.recommend.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".ui.recommend.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailProductActivity"
+            android:name=".ui.recommend.DetailProductActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoryDetailActivity"
+            android:name=".ui.category.CategoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".DaftarActivity"
+            android:name=".ui.auth.DaftarActivity"
             android:exported="false" />
         <activity
             android:name=".NyobaGambar"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.ayamgorengenak.capfits
+package com.ayamgorengenak.capfits.ui.recommend
 
 import android.Manifest
 import android.content.Intent
@@ -18,7 +18,6 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.ayamgorengenak.capfits.databinding.ActivityCameraBinding
-import com.ayamgorengenak.capfits.ui.ResultActivity
 import com.ayamgorengenak.capfits.utils.createFile
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors

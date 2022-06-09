@@ -1,4 +1,4 @@
-package com.ayamgorengenak.capfits.ui
+package com.ayamgorengenak.capfits.ui.recommend
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -21,7 +21,6 @@ import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ApiConfig.Companion.getApiService
 import com.ayamgorengenak.capfits.backend.FileUploadResponse
 import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
-import com.ayamgorengenak.capfits.backend.RecommendOutfit
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
 import com.ayamgorengenak.capfits.utils.rotateBitmap
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -36,7 +35,6 @@ class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
     private lateinit var rvRecommend: RecyclerView
-    private val list = ArrayList<RecommendOutfit>()
 
     private var ss: File? = null
 

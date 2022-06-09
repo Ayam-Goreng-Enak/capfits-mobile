@@ -1,19 +1,15 @@
-package com.ayamgorengenak.capfits
+package com.ayamgorengenak.capfits.ui.home
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.core.view.updateLayoutParams
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.databinding.ActivityHomeBinding
+import com.ayamgorengenak.capfits.ui.recommend.CameraActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
