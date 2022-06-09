@@ -20,4 +20,6 @@ to-do:
   - ✅ add photo and name of fashionista
   - ✅ horizontal scroll for category
   - ✅ horizontal scroll for faq
-  - home slider
+- photo by url
+- intent to detail
+- intent galery
