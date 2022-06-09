@@ -360,6 +360,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/penjual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -369,6 +370,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/lokasi_penjual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -466,6 +468,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/detailproduct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

@@ -27,6 +27,11 @@ class DetailProductActivity : AppCompatActivity() {
         val rating = detail?.rating
         val warna = detail?.rating
         val deskripsi = detail?.deskripsi
+        val detailProduct = detail?.detailProduk
+        val nama = detail?.nama
+        val size : ArrayList<String>
+
+
 
 
 
@@ -42,6 +47,10 @@ class DetailProductActivity : AppCompatActivity() {
             locationProduct.text = lokasi
             starProduct.text = rating.toString()
             descriptionProduct.text = deskripsi
+            penjual.text = nama
+            lokasiPenjual.text = lokasi
+            detailproduct.text = detailProduct
+
 
 
         }
