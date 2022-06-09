@@ -45,7 +45,11 @@ data class ListRekomendasiItem(
 
     @SerializedName("size")
     @Expose
-    val size: Int,
+    val size: String,
+
+    @SerializedName("nama")
+    @Expose
+    val nama: String,
 
     @SerializedName("waist")
     @Expose
@@ -69,6 +73,6 @@ data class ListRekomendasiItem(
 
     @SerializedName("rating")
     @Expose
-    val rating: Int,
+    val rating: Int
 
 ) : Parcelable

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.app.ActivityOptionsCompat
@@ -25,7 +26,6 @@ class ListRecommendAdapter(private val recommendList: MutableList<ListRekomendas
             binding.root.setOnClickListener {
                 onItemClickCallback.onItemClicked(recommend)
             }
-
             binding.apply {
                 Glide.with(itemView).load(recommend.foto)
                     .transition(DrawableTransitionOptions.withCrossFade()).centerCrop()
