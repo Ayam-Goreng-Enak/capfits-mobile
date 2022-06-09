@@ -25,7 +25,7 @@
             android:name=".ui.recommend.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.recommend.CameraActivity"
@@ -38,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.DaftarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NyobaGambar"
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
