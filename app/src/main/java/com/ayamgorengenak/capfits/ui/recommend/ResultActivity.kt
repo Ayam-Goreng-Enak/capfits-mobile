@@ -1,6 +1,7 @@
 package com.ayamgorengenak.capfits.ui.recommend
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -140,6 +141,17 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend.layoutManager = GridLayoutManager(this, 2)
         val listRecommendAdapter = ListRecommendAdapter(rec)
         rvRecommend.adapter = listRecommendAdapter
+        listRecommendAdapter.setOnClickCallBack(object : ListRecommendAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: ListRekomendasiItem) {
+                Intent(this@ResultActivity, DetailProductActivity::class.java).also {
+                    it.putExtra(DetailProductActivity.EXTRA_DATA, data)
+                    startActivity(it)
+
+                }
+
+            }
+        })
+
     }
 
     private fun setupRecyclerView() {

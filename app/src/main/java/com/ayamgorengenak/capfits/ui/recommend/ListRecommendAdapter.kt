@@ -35,20 +35,20 @@ class ListRecommendAdapter(private val recommendList: MutableList<ListRekomendas
                 locationProduct.text = recommend.lokasi
                 starProduct.text = recommend.rating.toString()
 
-                itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailProductActivity::class.java)
-                    intent.putExtra("ListRekomendasiItem", recommend)
-                    val optionsCompat: ActivityOptionsCompat =
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(
-                            itemView.context as Activity,
-                            Pair(imageProduct, "image"),
-                            Pair(titleProduct, "name"),
-                            Pair(priceProduct, "price"),
-                            Pair(locationProduct, "location"),
-                            Pair(starProduct, "star")
-                        )
-                    itemView.context.startActivity(intent, optionsCompat.toBundle())
-                }
+//                itemView.setOnClickListener {
+//                    val intent = Intent(itemView.context, DetailProductActivity::class.java)
+//                    intent.putExtra("ListRekomendasiItem", recommend)
+//                    val optionsCompat: ActivityOptionsCompat =
+//                        ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                            itemView.context as Activity,
+//                            Pair(imageProduct, "image"),
+//                            Pair(titleProduct, "name"),
+//                            Pair(priceProduct, "price"),
+//                            Pair(locationProduct, "location"),
+//                            Pair(starProduct, "star")
+//                        )
+//                    itemView.context.startActivity(intent, optionsCompat.toBundle())
+//                }
             }
         }
     }

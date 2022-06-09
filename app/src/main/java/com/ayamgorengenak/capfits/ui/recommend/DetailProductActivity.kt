@@ -1,13 +1,54 @@
-
 package com.ayamgorengenak.capfits.ui.recommend
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
+import com.ayamgorengenak.capfits.databinding.ActivityDetailProductBinding
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class DetailProductActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailProductBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_product)
+        binding = ActivityDetailProductBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+
+        val detail = intent.getParcelableExtra<ListRekomendasiItem>(EXTRA_DATA)
+        val image = detail?.foto
+        val judul = detail?.nama_outfit
+        val sewa = detail?.harga_sewa
+        val lokasi = detail?.lokasi
+        val rating = detail?.rating
+        val warna = detail?.rating
+        val deskripsi = detail?.deskripsi
+
+
+
+        binding.apply {
+
+            Glide.with(this@DetailProductActivity)
+                .load(image)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .centerCrop()
+                .into(fotoDetail)
+            titleProduct.text = judul
+            priceProduct.text = sewa.toString()
+            locationProduct.text = lokasi
+            starProduct.text = rating.toString()
+            descriptionProduct.text = deskripsi
+
+
+        }
+
+    }
+
+    companion object {
+        const val EXTRA_DATA = "extra_data"
     }
 }
