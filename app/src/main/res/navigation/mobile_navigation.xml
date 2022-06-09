@@ -19,7 +19,5 @@
 
     <fragment
         android:id="@+id/navigation_capture"
-        android:name="com.ayamgorengenak.capfits.ui.capture.CaptureFragment"
-        android:label="@string/title_capfits"
         tools:layout="@layout/activity_camera" />
 </navigation>
