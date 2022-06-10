@@ -1,23 +1,21 @@
 package com.ayamgorengenak.capfits.ui.recommend
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.WarnaAdapter
 import com.ayamgorengenak.capfits.backend.ApiConfig
 import com.ayamgorengenak.capfits.backend.FileDetailResponse
-import com.ayamgorengenak.capfits.backend.ListDetailItem
-import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.databinding.ActivityDetailProductBinding
-import com.ayamgorengenak.capfits.databinding.ItemWarnaBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
 
 class DetailProductActivity : AppCompatActivity() {
     private var idOutfit: Int? = null
@@ -35,7 +33,9 @@ class DetailProductActivity : AppCompatActivity() {
     private var waist: ArrayList<String>? = null
     private var length: ArrayList<String>? = null
 
+    private lateinit var rvWarna: RecyclerView
     private lateinit var binding: ActivityDetailProductBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailProductBinding.inflate(layoutInflater)
@@ -84,6 +84,8 @@ class DetailProductActivity : AppCompatActivity() {
                     setWaist(itemWaist)
                     setLength(itemLength)
 
+                    showRecyclerWarna(itemColor)
+
                     binding.apply {
 
                         Glide.with(this@DetailProductActivity)
@@ -121,6 +123,17 @@ class DetailProductActivity : AppCompatActivity() {
             }
         })
 
+        rvWarna = findViewById(R.id.rvWarna)
+        rvWarna.setHasFixedSize(true)
+    }
+
+    private fun showRecyclerWarna(itemColor : ArrayList<String>){
+        rvWarna.layoutManager = LinearLayoutManager(this)
+        val warnaAdapter = WarnaAdapter(itemColor)
+        for(color in itemColor!!){
+            Log.e("", "$color")
+        }
+        rvWarna.adapter = warnaAdapter
     }
 
     companion object {

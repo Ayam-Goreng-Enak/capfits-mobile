@@ -156,8 +156,6 @@ class ResultActivity : AppCompatActivity() {
                     startActivity(it)
 
                 }
-
-
             }
         })
     }
