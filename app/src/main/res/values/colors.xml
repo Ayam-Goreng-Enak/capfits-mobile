@@ -11,4 +11,35 @@
     <color name="gray_font">#999999</color>
     <color name="background">#FAFAFA</color>
     <color name="transparent">#00000000</color>
+
+    <color name="beige">#FFFFFFFF</color>
+    <color name="blue">#1F38DC</color>
+    <color name="bronze">#FFFFFFFF</color>
+    <color name="brown">#34430808</color>
+    <color name="burgundy">#FFFFFFFF</color>
+    <color name="charcoal">#1E1515</color>
+    <color name="coffe_brown">#FFFFFFFF</color>
+    <color name="copper">#FFFFFFFF</color>
+    <color name="cream">#FFFFFFFF</color>
+    <color name="gold">#FBCB4E</color>
+    <color name="green">#4BBF1E</color>
+    <color name="grey">#6BFFFFFF</color>
+    <color name="grey_melange">#FFFFFFFF</color>
+    <color name="khaki">#FFFFFFFF</color>
+    <color name="lavender">#FFFFFFFF</color>
+    <color name="magenta">#FFFFFFFF</color>
+    <color name="maroon">#FFFFFFFF</color>
+    <color name="multi">#FFFFFFFF</color>
+    <color name="mushroom_brown">#FFFFFFFF</color>
+    <color name="mustard">#FFFFFFFF</color>
+    <color name="navy_blue">#134EA6</color>
+    <color name="olive">#FFFFFFFF</color>
+    <color name="orange">#E67109</color>
+    <color name="peach">#FFFFFFFF</color>
+    <color name="pink">#FB47A6</color>
+    <color name="red">#DA0D0D</color>
+    <color name="silver">#FFFFFFFF</color>
+    <color name="tan">#FFFFFFFF</color>
+    <color name="teal">#FFFFFFFF</color>
+    <color name="yellow">#D0E125</color>
 </resources>

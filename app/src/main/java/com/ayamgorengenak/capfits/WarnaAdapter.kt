@@ -3,6 +3,7 @@ package com.ayamgorengenak.capfits
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.WarnaAdapter.WarnaViewHolder
@@ -18,6 +19,7 @@ class WarnaAdapter(private val warna: ArrayList<String>?) :
 
     inner class WarnaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvWarna: TextView = itemView.findViewById((R.id.warna))
+        var tvBulet: ImageView = itemView.findViewById((R.id.warnaBulet))
     }
 //        RecyclerView.ViewHolder(binding.root) {
 //        fun bind(warna: String) {
@@ -35,7 +37,14 @@ class WarnaAdapter(private val warna: ArrayList<String>?) :
     }
 
     override fun onBindViewHolder(holder: WarnaViewHolder, position: Int) {
-        holder.tvWarna.text = warna!!.get(position)
+        holder.tvWarna.text = warna!![position]
+        if(warna!!.get(position).equals("White") or warna!!.get(position).equals("Ivory")) holder.tvBulet.setBackgroundResource(R.color.white)
+        else if(warna!!.get(position).equals("Blue")) holder.tvBulet.setBackgroundResource(R.color.blue)
+        else if(warna!!.get(position).equals("Red")) holder.tvBulet.setBackgroundResource(R.color.red)
+        else if(warna!!.get(position).equals("Yellow")) holder.tvBulet.setBackgroundResource(R.color.yellow)
+        else if(warna!!.get(position).equals("Brown")) holder.tvBulet.setBackgroundResource(R.color.brown)
+        else if(warna!!.get(position).equals("Black")) holder.tvBulet.setBackgroundResource(R.color.black)
+        else holder.tvBulet.setBackgroundResource(R.color.purple_200)
     }
 
     override fun getItemCount(): Int = warna?.size!!
