@@ -22,6 +22,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.ayamgorengenak.capfits.databinding.ActivityCameraBinding
 import com.ayamgorengenak.capfits.utils.createFile
+import com.ayamgorengenak.capfits.utils.rotateBitmap
 import com.ayamgorengenak.capfits.utils.uriToFile
 import java.io.File
 import java.util.concurrent.ExecutorService
@@ -122,6 +123,7 @@ class CameraActivity : AppCompatActivity() {
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+                    intent.putExtra("isCamera", 1)
                     intent.putExtra("picture", photoFile)
                     intent.putExtra(
                         "isBackCamera",
@@ -186,6 +188,7 @@ class CameraActivity : AppCompatActivity() {
             getFile = myFile
 
             val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+            intent.putExtra("isCamera", 0)
             intent.putExtra("picture", getFile)
             Log.e("cek galeri", "$getFile")
             startActivity(intent)

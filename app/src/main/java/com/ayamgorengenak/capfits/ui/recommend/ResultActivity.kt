@@ -24,6 +24,7 @@ import com.ayamgorengenak.capfits.backend.FileUploadResponse
 import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.databinding.ActivityResultBinding
 import com.ayamgorengenak.capfits.utils.rotateBitmap
+import com.ayamgorengenak.capfits.utils.rotateMedia
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import retrofit2.Call
 import retrofit2.Callback
@@ -109,11 +110,17 @@ class ResultActivity : AppCompatActivity() {
         }
 
         val ss: File = intent.getSerializableExtra("picture") as File
-        val result = rotateBitmap(
-            BitmapFactory.decodeFile(ss.path)
-        )
-        binding.resultCapture.setImageBitmap(result)
-        uploadImage(ss)
+        if (intent.getSerializableExtra("isCamera") == 1) {
+            val result = rotateBitmap(
+                BitmapFactory.decodeFile(ss.path)
+            )
+            binding.resultCapture.setImageBitmap(result)
+            uploadImage(ss)
+        } else {
+            val result = rotateMedia(BitmapFactory.decodeFile(ss.path))
+            binding.resultCapture.setImageBitmap(result)
+            uploadImage(ss)
+        }
     }
 
     private fun getList(rec: MutableList<ListRekomendasiItem>) {
@@ -141,7 +148,7 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend.layoutManager = GridLayoutManager(this, 2)
         val listRecommendAdapter = ListRecommendAdapter(rec)
         rvRecommend.adapter = listRecommendAdapter
-        listRecommendAdapter.setOnClickCallBack(object : ListRecommendAdapter.OnItemClickCallback{
+        listRecommendAdapter.setOnClickCallBack(object : ListRecommendAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ListRekomendasiItem) {
                 Intent(this@ResultActivity, DetailProductActivity::class.java).also {
                     it.putExtra(DetailProductActivity.EXTRA_DATA, data)
@@ -151,7 +158,6 @@ class ResultActivity : AppCompatActivity() {
 
             }
         })
-
     }
 
     private fun setupRecyclerView() {
@@ -165,9 +171,7 @@ class ResultActivity : AppCompatActivity() {
     private fun uploadImage(ss: File) {
 //        Log.e("cek", "$ss")
         if (ss != null) {
-            val bitimg = rotateBitmap(
-                BitmapFactory.decodeFile(ss.path)
-            )
+            val bitimg = BitmapFactory.decodeFile(ss.path)
             val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
             bitimg.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
             val byteimg = byteArrayOutputStream.toByteArray()
