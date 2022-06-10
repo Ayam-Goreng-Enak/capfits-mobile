@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/category"
                 android:layout_width="match_parent"
@@ -27,12 +26,12 @@
 
                 <ImageView
                     android:id="@+id/foto_detail"
-                    android:contentDescription=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/cat1"
-                    android:scaleType="centerCrop"/>
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cat1" />
 
                 <Button
                     android:layout_width="42dp"
@@ -124,17 +123,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:orientation="vertical"
                 android:background="@color/white"
-                android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sectionMain">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sectionMain">
 
-               <androidx.recyclerview.widget.RecyclerView
-                   android:id="@+id/rv_warna"
-                   android:orientation="horizontal"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   tools:listitem="@layout/item_warna"/>
+                    <TextView
+                        android:layout_marginStart="16dp"
+                        android:id="@+id/labelWarna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Pilih warna: "
+                        android:textColor="@color/black_font"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="3"
+                        android:textColor="@color/gray_font"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/sectionRvColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sectionColor">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_warna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/labelWarna"
+                        tools:listitem="@layout/item_warna" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -169,7 +206,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:fontFamily="@font/poppins_regular"
                         android:text="3"
                         android:textColor="@color/gray_font"
@@ -710,8 +746,8 @@
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:layout_gravity=""
-                    android:text="@string/btn_keranjang"
-                    android:background="@drawable/custom_button">
+                    android:background="@drawable/custom_button"
+                    android:text="@string/btn_keranjang">
 
 
                 </Button>

@@ -43,24 +43,16 @@
         <entry key="..\:/Android/Capfits/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_camera.xml" value="0.1" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_category_detail.xml" value="0.1" />
+        <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_detail_product.xml" value="0.264" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_nyoba_gambar.xml" value="0.1" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/activity_result.xml" value="0.12613981762917933" />
+        <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/fragment_home.xml" value="0.12613981762917933" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/fragment_result.xml" value="0.1" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/item_category.xml" value="0.25317028985507245" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/item_result.xml" value="0.25317028985507245" />
+        <entry key="..\:/Android/capfits-mobile/app/src/main/res/layout/item_warna.xml" value="0.264" />
         <entry key="..\:/Android/capfits-mobile/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile11/app/src/main/res/layout/activity_detail_product.xml" value="0.28150134048257375" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile12/app/src/main/res/layout/activity_category_detail.xml" value="0.1" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile12/app/src/main/res/layout/activity_detail_product.xml" value="0.264" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/activity_category_detail.xml" value="0.25" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/activity_daftar.xml" value="0.25" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/activity_detail_product.xml" value="0.18755555555555556" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/activity_result.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/fragment_home.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/item_result.xml" value="0.25" />
-        <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile15/app/src/main/res/layout/item_warna.xml" value="0.25" />
         <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile2/app/src/main/res/layout/activity_camera.xml" value="0.1640625" />
         <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile2/app/src/main/res/layout/activity_category_detail.xml" value="0.1640625" />
         <entry key="..\:/Users/adamp/AndroidStudioProjects/capfits-mobile2/app/src/main/res/layout/activity_daftar.xml" value="0.1640625" />
