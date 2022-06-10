@@ -29,7 +29,7 @@ class DetailProductActivity : AppCompatActivity() {
         val deskripsi = detail?.deskripsi
         val detailProduct = detail?.detailProduk
         val nama = detail?.nama
-        val size : ArrayList<String>
+        val size: ArrayList<String>
 
 
 
@@ -50,7 +50,6 @@ class DetailProductActivity : AppCompatActivity() {
             penjual.text = nama
             lokasiPenjual.text = lokasi
             detailproduct.text = detailProduct
-
 
 
         }
