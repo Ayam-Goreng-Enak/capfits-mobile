@@ -5,12 +5,14 @@ import android.os.Bundle
 import com.ayamgorengenak.capfits.R
 import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.databinding.ActivityDetailProductBinding
+import com.ayamgorengenak.capfits.databinding.ItemWarnaBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class DetailProductActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailProductBinding
+    private lateinit var binding2: ItemWarnaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,13 +28,11 @@ class DetailProductActivity : AppCompatActivity() {
         val lokasi = detail?.lokasi
         val rating = detail?.rating
         val warna = detail?.rating
-        val deskripsi = detail?.deskripsi
-        val detailProduct = detail?.detailProduk
-        val nama = detail?.nama
-        val size: ArrayList<String>
 
 
 
+
+//        binding2.warna.text = detail?.warna.toString()
 
 
         binding.apply {

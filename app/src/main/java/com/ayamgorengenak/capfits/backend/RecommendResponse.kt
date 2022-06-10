@@ -27,41 +27,9 @@ data class ListRekomendasiItem(
     @Expose
     val foto: String,
 
-    @SerializedName("warna")
-    @Expose
-    val warna: String,
-
     @SerializedName("nama_outfit")
     @Expose
     val nama_outfit: String,
-
-    @SerializedName("deskripsi")
-    @Expose
-    val deskripsi: String,
-
-    @SerializedName("detail_produk")
-    @Expose
-    val detailProduk: String,
-
-    @SerializedName("size")
-    @Expose
-    val size: String,
-
-    @SerializedName("nama")
-    @Expose
-    val nama: String,
-
-    @SerializedName("waist")
-    @Expose
-    val waist: String,
-
-    @SerializedName("hip")
-    @Expose
-    val hip: String,
-
-    @SerializedName("length")
-    @Expose
-    val length: String,
 
     @SerializedName("harga_sewa")
     @Expose

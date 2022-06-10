@@ -150,6 +150,46 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend.adapter = listRecommendAdapter
         listRecommendAdapter.setOnClickCallBack(object : ListRecommendAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ListRekomendasiItem) {
+                val service = getApiService().detail(id)
+
+                service.enqueue(object : Callback<FileUploadResponse> {
+                    override fun onResponse(
+                        call: Call<FileUploadResponse>,
+                        response: Response<FileUploadResponse>
+                    ) {
+                        if (response.isSuccessful) {
+                            Log.e("cek", "bisaqa")
+//                            Intent(this@ResultActivity, MainActivity::class.java).also {
+//                                finish()
+//                            }
+                            val responseBody = response.body()
+                            if (responseBody != null && !responseBody.error) {
+                                showRecyclerList(responseBody.data)
+                                Toast.makeText(
+                                    this@ResultActivity,
+                                    responseBody.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } else {
+                            Toast.makeText(
+                                this@ResultActivity,
+                                response.message(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
+                        Log.e("cek", "thidaa")
+                        Toast.makeText(
+                            this@ResultActivity,
+                            "Cannot instance Retrofit",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                })
+
                 Intent(this@ResultActivity, DetailProductActivity::class.java).also {
                     it.putExtra(DetailProductActivity.EXTRA_DATA, data)
                     startActivity(it)

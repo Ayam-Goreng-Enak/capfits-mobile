@@ -18,4 +18,9 @@ interface ApiService {
         @Body base64img: String
     ): Call<FileUploadResponse>
 
+    @POST("getOutfit")
+    fun detail(
+        @Body id: Int
+    ): Call<FileDetailResponse>
+
 }

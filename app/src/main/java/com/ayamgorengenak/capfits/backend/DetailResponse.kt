@@ -5,8 +5,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-class DetailResponse(
-
+class FileDetailResponse(
     @field:SerializedName("data")
     @Expose
     val data: MutableList<ListDetailItem>,
@@ -18,7 +17,6 @@ class DetailResponse(
     val message: String
 )
 
-
 @Parcelize
 data class ListDetailItem(
     @SerializedName("id_outfit")
@@ -29,9 +27,41 @@ data class ListDetailItem(
     @Expose
     val foto: String,
 
+    @SerializedName("warna")
+    @Expose
+    val warna: String,
+
     @SerializedName("nama_outfit")
     @Expose
     val nama_outfit: String,
+
+    @SerializedName("deskripsi")
+    @Expose
+    val deskripsi: String,
+
+    @SerializedName("detail_produk")
+    @Expose
+    val detailProduk: String,
+
+    @SerializedName("size")
+    @Expose
+    val size: String,
+
+    @SerializedName("nama")
+    @Expose
+    val nama: String,
+
+    @SerializedName("waist")
+    @Expose
+    val waist: String,
+
+    @SerializedName("hip")
+    @Expose
+    val hip: String,
+
+    @SerializedName("length")
+    @Expose
+    val length: String,
 
     @SerializedName("harga_sewa")
     @Expose
@@ -43,6 +73,6 @@ data class ListDetailItem(
 
     @SerializedName("rating")
     @Expose
-    val rating: Int,
+    val rating: Int
 
-    ) : Parcelable
+) : Parcelable
