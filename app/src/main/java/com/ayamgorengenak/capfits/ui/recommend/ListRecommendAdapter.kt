@@ -20,7 +20,6 @@ class ListRecommendAdapter(private val recommendList: MutableList<ListRekomendas
     RecyclerView.Adapter<ListRecommendAdapter.RecommendViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
-
     inner class RecommendViewHolder(private val binding: ItemResultBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recommend: ListRekomendasiItem) {
@@ -78,7 +77,7 @@ class ListRecommendAdapter(private val recommendList: MutableList<ListRekomendas
         }
     }
 
-    interface OnItemClickCallback  {
+    interface OnItemClickCallback {
         fun onItemClicked(data: ListRekomendasiItem)
     }
 

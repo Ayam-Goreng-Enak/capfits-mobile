@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 class FileDetailResponse(
     @field:SerializedName("data")
     @Expose
-    val data: MutableList<ListDetailItem>,
+    val data: ArrayList<ListDetailItem>,
 
     @field:SerializedName("error")
     val error: Boolean,

@@ -20,7 +20,7 @@ interface ApiService {
 
     @POST("getOutfit")
     fun detail(
-        @Body id: Int
+        @Body id_outfit: Int
     ): Call<FileDetailResponse>
 
 }
