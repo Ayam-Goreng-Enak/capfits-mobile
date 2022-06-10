@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.UkuranAdapter
 import com.ayamgorengenak.capfits.WarnaAdapter
 import com.ayamgorengenak.capfits.backend.ApiConfig
 import com.ayamgorengenak.capfits.backend.FileDetailResponse
@@ -33,7 +34,9 @@ class DetailProductActivity : AppCompatActivity() {
     private var waist: ArrayList<String>? = null
     private var length: ArrayList<String>? = null
 
+
     private lateinit var rvWarna: RecyclerView
+    private lateinit var rvUkuran: RecyclerView
     private lateinit var binding: ActivityDetailProductBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +81,7 @@ class DetailProductActivity : AppCompatActivity() {
                     for (color in tmpColor.split(",")){
                         itemColor.add(color)
                     }
+
                     setWarna(itemColor)
                     setSize(itemSize)
                     setHip(itemHip)
@@ -85,6 +89,8 @@ class DetailProductActivity : AppCompatActivity() {
                     setLength(itemLength)
 
                     showRecyclerWarna(itemColor)
+                    showRecyclerUkuran(itemSize)
+
 
                     binding.apply {
 
@@ -125,15 +131,26 @@ class DetailProductActivity : AppCompatActivity() {
 
         rvWarna = findViewById(R.id.rvWarna)
         rvWarna.setHasFixedSize(true)
+        rvUkuran = findViewById(R.id.rvUkuran)
+        rvUkuran.setHasFixedSize(true)
     }
 
     private fun showRecyclerWarna(itemColor : ArrayList<String>){
-        rvWarna.layoutManager = LinearLayoutManager(this)
+        rvWarna.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         val warnaAdapter = WarnaAdapter(itemColor)
         for(color in itemColor!!){
             Log.e("", "$color")
         }
         rvWarna.adapter = warnaAdapter
+    }
+
+    private fun showRecyclerUkuran(itemUkuran : ArrayList<String>){
+        rvUkuran.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        val ukuranAdapter = UkuranAdapter(itemUkuran)
+        for(ukuran in itemUkuran!!){
+            Log.e("", "$ukuran")
+        }
+        rvUkuran.adapter = ukuranAdapter
     }
 
     companion object {
