@@ -20,9 +20,22 @@ import retrofit2.Response
 import java.io.File
 
 class DetailProductActivity : AppCompatActivity() {
+    private var idOutfit: Int? = null
+    private var image: String? = null
+    private var judul: String? = null
+    private var sewa: Int? = null
+    private var lokasi: String? = null
+    private var rating: Int? = null
+    private var warna: ArrayList<String>? = null
+    private var deskripsi: String? = null
+    private var detailProduct: String? = null
+    private var nama: String? = null
+    private var size: ArrayList<String>? = null
+    private var hip: ArrayList<String>? = null
+    private var waist: ArrayList<String>? = null
+    private var length: ArrayList<String>? = null
 
     private lateinit var binding: ActivityDetailProductBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailProductBinding.inflate(layoutInflater)
@@ -38,11 +51,56 @@ class DetailProductActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     Log.e("cek", "bisaqa")
-//                            Intent(this@ResultActivity, MainActivity::class.java).also {
-//                                finish()
-//                            }
                     val responseBody = response.body()
+                    var itemColor : ArrayList<String> = ArrayList()
+                    var tmpColor : String = String()
+                    var itemSize : ArrayList<String> = ArrayList()
+                    var itemHip : ArrayList<String> = ArrayList()
+                    var itemWaist : ArrayList<String> = ArrayList()
+                    var itemLength : ArrayList<String> = ArrayList()
 
+                    for (outfit in responseBody?.data!!){
+                        idOutfit = outfit.id_outfit
+                        image = outfit.foto
+                        judul = outfit.nama_outfit
+                        sewa = outfit.harga_sewa
+                        lokasi = outfit.lokasi
+                        rating = outfit.rating
+                        tmpColor = outfit.warna
+                        deskripsi = outfit.deskripsi
+                        detailProduct = outfit.detailProduk
+                        nama = outfit.nama
+                        itemSize.add(outfit.size)
+                        itemHip.add(outfit.hip)
+                        itemWaist.add(outfit.waist)
+                        itemLength.add(outfit.length)
+                    }
+                    for (color in tmpColor.split(",")){
+                        itemColor.add(color)
+                    }
+                    setWarna(itemColor)
+                    setSize(itemSize)
+                    setHip(itemHip)
+                    setWaist(itemWaist)
+                    setLength(itemLength)
+
+                    binding.apply {
+
+                        Glide.with(this@DetailProductActivity)
+                            .load(image)
+                            .transition(DrawableTransitionOptions.withCrossFade())
+                            .centerCrop()
+                            .into(fotoDetail)
+                        titleProduct.text = judul
+                        priceProduct.text = sewa.toString()
+                        locationProduct.text = lokasi
+                        starProduct.text = rating.toString()
+                        descriptionProduct.text = deskripsi
+                        penjual.text = nama
+                        lokasiPenjual.text = lokasi
+                        detailproduct.text = detailProduct
+
+                    }
 
                 } else {
                     Toast.makeText(
@@ -63,48 +121,25 @@ class DetailProductActivity : AppCompatActivity() {
             }
         })
 
-        val detail = intent.getParcelableExtra<ListDetailItem>(EXTRA_DATA)
-        val image = detail?.foto
-        val judul = detail?.nama_outfit
-        val sewa = detail?.harga_sewa
-        val lokasi = detail?.lokasi
-        val rating = detail?.rating
-        val warna = detail?.rating
-        val deskripsi = detail?.deskripsi
-        val detailProduct = detail?.detailProduk
-        val nama = detail?.nama
-
-
-
-
-
-
-//        binding2.warna.text = detail?.warna.toString()
-
-
-        binding.apply {
-
-            Glide.with(this@DetailProductActivity)
-                .load(image)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .centerCrop()
-                .into(fotoDetail)
-            titleProduct.text = judul
-            priceProduct.text = sewa.toString()
-            locationProduct.text = lokasi
-            starProduct.text = rating.toString()
-            descriptionProduct.text = deskripsi
-            penjual.text = nama
-            lokasiPenjual.text = lokasi
-            detailproduct.text = detailProduct
-
-
-
-        }
-
     }
 
     companion object {
         const val EXTRA_DATA = "extra_data"
+    }
+
+    private fun setWarna(warna:ArrayList<String>){
+        this.warna = warna
+    }
+    private fun setSize(size:ArrayList<String>){
+        this.size = size
+    }
+    private fun setHip(hip:ArrayList<String>){
+        this.hip = hip
+    }
+    private fun setWaist(waist:ArrayList<String>){
+        this.waist = waist
+    }
+    private fun setLength(length:ArrayList<String>){
+        this.length = length
     }
 }
