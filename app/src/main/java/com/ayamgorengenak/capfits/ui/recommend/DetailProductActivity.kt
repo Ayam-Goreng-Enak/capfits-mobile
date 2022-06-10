@@ -128,7 +128,7 @@ class DetailProductActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerWarna(itemColor : ArrayList<String>){
-        rvWarna.layoutManager = LinearLayoutManager(this)
+        rvWarna.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         val warnaAdapter = WarnaAdapter(itemColor)
         for(color in itemColor!!){
             Log.e("", "$color")
