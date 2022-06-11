@@ -18,8 +18,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_width="42dp"
-        android:layout_height="42dp"
+        android:id="@+id/back_result"
+        android:layout_width="29dp"
+        android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/ic_bg_cancel" />

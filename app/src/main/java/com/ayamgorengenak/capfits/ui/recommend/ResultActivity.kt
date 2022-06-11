@@ -78,6 +78,12 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend = findViewById(R.id.rv_category)
         rvRecommend.setHasFixedSize(true)
 
+        binding.backResult.setOnClickListener{
+            Intent(this@ResultActivity, CameraActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
 //        if (listRecommend != null) {
 //            list.addAll(listRecommend)
 //        }
