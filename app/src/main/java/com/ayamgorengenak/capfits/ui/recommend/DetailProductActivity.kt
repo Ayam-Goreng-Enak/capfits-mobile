@@ -1,5 +1,6 @@
 package com.ayamgorengenak.capfits.ui.recommend
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,11 +8,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ayamgorengenak.capfits.R
+import com.ayamgorengenak.capfits.SuccessActivity
 import com.ayamgorengenak.capfits.UkuranAdapter
 import com.ayamgorengenak.capfits.WarnaAdapter
 import com.ayamgorengenak.capfits.backend.ApiConfig
 import com.ayamgorengenak.capfits.backend.FileDetailResponse
 import com.ayamgorengenak.capfits.databinding.ActivityDetailProductBinding
+import com.ayamgorengenak.capfits.ui.auth.LoginActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import retrofit2.Call
@@ -43,6 +46,12 @@ class DetailProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailProductBinding.inflate(layoutInflater)
 
+        binding.buttonSewa.setOnClickListener {
+            Intent(this@DetailProductActivity, SuccessActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
         setContentView(binding.root)
         val id = intent.getIntExtra("id", -1)
         val service = ApiConfig.getApiService().detail(id)
@@ -55,14 +64,14 @@ class DetailProductActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     Log.e("cek", "bisaqa")
                     val responseBody = response.body()
-                    var itemColor : ArrayList<String> = ArrayList()
-                    var tmpColor : String = String()
-                    var itemSize : ArrayList<String> = ArrayList()
-                    var itemHip : ArrayList<String> = ArrayList()
-                    var itemWaist : ArrayList<String> = ArrayList()
-                    var itemLength : ArrayList<String> = ArrayList()
+                    var itemColor: ArrayList<String> = ArrayList()
+                    var tmpColor: String = String()
+                    var itemSize: ArrayList<String> = ArrayList()
+                    var itemHip: ArrayList<String> = ArrayList()
+                    var itemWaist: ArrayList<String> = ArrayList()
+                    var itemLength: ArrayList<String> = ArrayList()
 
-                    for (outfit in responseBody?.data!!){
+                    for (outfit in responseBody?.data!!) {
                         idOutfit = outfit.id_outfit
                         image = outfit.foto
                         judul = outfit.nama_outfit
@@ -78,7 +87,7 @@ class DetailProductActivity : AppCompatActivity() {
                         itemWaist.add(outfit.waist)
                         itemLength.add(outfit.length)
                     }
-                    for (color in tmpColor.split(",")){
+                    for (color in tmpColor.split(",")) {
                         itemColor.add(color)
                     }
 
@@ -135,19 +144,19 @@ class DetailProductActivity : AppCompatActivity() {
         rvUkuran.setHasFixedSize(true)
     }
 
-    private fun showRecyclerWarna(itemColor : ArrayList<String>){
-        rvWarna.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+    private fun showRecyclerWarna(itemColor: ArrayList<String>) {
+        rvWarna.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val warnaAdapter = WarnaAdapter(itemColor)
-        for(color in itemColor!!){
+        for (color in itemColor!!) {
             Log.e("", "$color")
         }
         rvWarna.adapter = warnaAdapter
     }
 
-    private fun showRecyclerUkuran(itemUkuran : ArrayList<String>){
-        rvUkuran.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+    private fun showRecyclerUkuran(itemUkuran: ArrayList<String>) {
+        rvUkuran.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val ukuranAdapter = UkuranAdapter(itemUkuran)
-        for(ukuran in itemUkuran!!){
+        for (ukuran in itemUkuran!!) {
             Log.e("", "$ukuran")
         }
         rvUkuran.adapter = ukuranAdapter
@@ -157,19 +166,23 @@ class DetailProductActivity : AppCompatActivity() {
         const val EXTRA_DATA = "extra_data"
     }
 
-    private fun setWarna(warna:ArrayList<String>){
+    private fun setWarna(warna: ArrayList<String>) {
         this.warna = warna
     }
-    private fun setSize(size:ArrayList<String>){
+
+    private fun setSize(size: ArrayList<String>) {
         this.size = size
     }
-    private fun setHip(hip:ArrayList<String>){
+
+    private fun setHip(hip: ArrayList<String>) {
         this.hip = hip
     }
-    private fun setWaist(waist:ArrayList<String>){
+
+    private fun setWaist(waist: ArrayList<String>) {
         this.waist = waist
     }
-    private fun setLength(length:ArrayList<String>){
+
+    private fun setLength(length: ArrayList<String>) {
         this.length = length
     }
 }
