@@ -11,6 +11,7 @@ import com.ayamgorengenak.capfits.backend.ListRekomendasiItem
 import com.ayamgorengenak.capfits.databinding.ItemResultBinding
 import com.ayamgorengenak.capfits.databinding.ItemWarnaBinding
 import com.ayamgorengenak.capfits.ui.recommend.ListRecommendAdapter
+import com.bumptech.glide.Glide
 
 
 class WarnaAdapter(private val warna: ArrayList<String>?) :
@@ -38,13 +39,13 @@ class WarnaAdapter(private val warna: ArrayList<String>?) :
 
     override fun onBindViewHolder(holder: WarnaViewHolder, position: Int) {
         holder.tvWarna.text = warna!![position]
-        if(warna!!.get(position).equals("White") or warna!!.get(position).equals("Ivory")) holder.tvBulet.setBackgroundResource(R.color.white)
-        else if(warna!!.get(position).equals("Blue")) holder.tvBulet.setBackgroundResource(R.color.blue)
-        else if(warna!!.get(position).equals("Red")) holder.tvBulet.setBackgroundResource(R.color.red)
-        else if(warna!!.get(position).equals("Yellow")) holder.tvBulet.setBackgroundResource(R.color.yellow)
-        else if(warna!!.get(position).equals("Brown")) holder.tvBulet.setBackgroundResource(R.color.brown)
-        else if(warna!!.get(position).equals("Black")) holder.tvBulet.setBackgroundResource(R.color.black)
-        else holder.tvBulet.setBackgroundResource(R.color.purple_200)
+        if(warna.get(position).equals("White") or warna!!.get(position).equals("Ivory")) holder.tvBulet.setImageResource(R.color.white)
+        else if(warna.get(position).equals("Blue")) holder.tvBulet.setImageResource(R.color.blue)
+        else if(warna.get(position).equals("Red")) holder.tvBulet.setImageResource(R.color.red)
+        else if(warna.get(position).equals("Yellow")) holder.tvBulet.setImageResource(R.color.yellow)
+        else if(warna.get(position).equals("Brown")) holder.tvBulet.setImageResource(R.color.brown)
+        else if(warna.get(position).equals("Black")) holder.tvBulet.setImageResource(R.color.black)
+        else holder.tvBulet.setImageResource(R.color.purple_200)
     }
 
     override fun getItemCount(): Int = warna?.size!!

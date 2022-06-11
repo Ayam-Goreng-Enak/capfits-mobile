@@ -123,10 +123,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:orientation="vertical"
                 android:background="@color/white"
+                android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sectionMain">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,10 +137,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/sectionMain">
 
                     <TextView
-                        android:layout_marginStart="16dp"
                         android:id="@+id/labelWarna"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:fontFamily="@font/poppins_medium"
                         android:text="Pilih warna: "
                         android:textColor="@color/black_font"
@@ -153,16 +154,18 @@
                         android:textColor="@color/gray_font"
                         android:textSize="12sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/sectionRvColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
-                    android:layout_marginStart="16dp"
+                    android:background="@color/white"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sectionColor">
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvWarna"
                         android:layout_width="wrap_content"
@@ -229,7 +232,7 @@
                         tools:listitem="@layout/item_ukuran" />
                 </LinearLayout>
 
-    >
+                >
             </LinearLayout>
 
             <LinearLayout
@@ -348,8 +351,9 @@
                         android:id="@+id/descriptionProduct"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
+                        android:layout_gravity="start"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/isi_desc"
                         android:textColor="@color/gray_font"
@@ -375,6 +379,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/detail"
                     android:textColor="@color/black_font"
@@ -395,6 +400,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginBottom="12dp"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/isi_detail2"
                     android:textColor="@color/gray_font"
@@ -417,8 +423,6 @@
                     android:text="@string/isi_detail4"
                     android:textColor="@color/gray_font"
                     android:textSize="12sp" />
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -436,6 +440,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/sectionDetail">
 
                 <TextView
+                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

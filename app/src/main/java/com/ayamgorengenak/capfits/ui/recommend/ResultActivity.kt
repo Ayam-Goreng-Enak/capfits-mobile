@@ -154,7 +154,6 @@ class ResultActivity : AppCompatActivity() {
                 Intent(this@ResultActivity, DetailProductActivity::class.java).also {
                     it.putExtra("id", data.id_outfit)
                     startActivity(it)
-
                 }
             }
         })

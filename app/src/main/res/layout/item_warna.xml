@@ -14,11 +14,10 @@
         android:layout_height="wrap_content"
         android:padding="4dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/warnaBulet"
             android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/color" />
+            android:layout_height="24dp"/>
 
         <TextView
             android:id="@+id/warna"
