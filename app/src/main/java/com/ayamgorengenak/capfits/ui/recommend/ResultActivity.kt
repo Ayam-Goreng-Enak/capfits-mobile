@@ -33,7 +33,6 @@ import retrofit2.Response
 import java.io.ByteArrayOutputStream
 import java.io.File
 
-
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
@@ -79,9 +78,7 @@ class ResultActivity : AppCompatActivity() {
         rvRecommend.setHasFixedSize(true)
 
         binding.backResult.setOnClickListener{
-            Intent(this@ResultActivity, CameraActivity::class.java).also {
-                startActivity(it)
-            }
+            onBackPressed()
         }
 
 //        if (listRecommend != null) {
