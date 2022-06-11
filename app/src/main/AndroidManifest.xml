@@ -22,6 +22,9 @@
         android:theme="@style/Theme.Capfits.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SuccessActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.recommend.ResultActivity"
             android:exported="false" />
         <activity
