@@ -316,7 +316,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="16dp"
                 android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -385,44 +384,26 @@
                     android:textColor="@color/black_font"
                     android:textSize="12sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp">
+
+
                 <TextView
                     android:id="@+id/detailproduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="12dp"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/isi_detail1"
                     android:textColor="@color/gray_font"
                     android:textSize="12sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/isi_detail2"
-                    android:textColor="@color/gray_font"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/isi_detail3"
-                    android:textColor="@color/gray_font"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/isi_detail4"
-                    android:textColor="@color/gray_font"
-                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -431,7 +412,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="16dp"
                 android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -626,11 +606,16 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 android:background="@color/white"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sectionGuide">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -648,26 +633,29 @@
                     android:text="@string/harga"
                     android:textColor="@color/gray_font"
                     android:textSize="12sp" />
-            </LinearLayout>
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+
+                <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                    android:layout_gravity="right"
+
+
                 app:layout_constraintTop_toBottomOf="@id/sectionGuide">
 
-                <Button
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity=""
-                    android:background="@drawable/custom_button"
-                    android:text="@string/btn_keranjang">
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_button"
+                        android:text="@string/btn_keranjang">
 
 
-                </Button>
+                    </Button>
+                </LinearLayout>
             </LinearLayout>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
