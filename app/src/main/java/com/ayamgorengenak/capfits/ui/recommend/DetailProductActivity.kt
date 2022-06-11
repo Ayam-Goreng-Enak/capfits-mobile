@@ -52,9 +52,7 @@ class DetailProductActivity : AppCompatActivity() {
             }
         }
         binding.backDetail.setOnClickListener{
-            Intent(this@DetailProductActivity, ResultActivity::class.java).also{
-                startActivity(it)
-            }
+            onBackPressed()
         }
 
         setContentView(binding.root)

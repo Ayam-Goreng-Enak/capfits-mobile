@@ -35,7 +35,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.recommend.DetailProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.recommend.ResultActivity"/>
         <activity
             android:name=".ui.category.CategoryDetailActivity"
             android:exported="false" />
