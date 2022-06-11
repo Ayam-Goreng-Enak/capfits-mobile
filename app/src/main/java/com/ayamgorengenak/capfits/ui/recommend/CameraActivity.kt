@@ -21,6 +21,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.ayamgorengenak.capfits.databinding.ActivityCameraBinding
+import com.ayamgorengenak.capfits.ui.home.HomeActivity
 import com.ayamgorengenak.capfits.utils.createFile
 import com.ayamgorengenak.capfits.utils.rotateBitmap
 import com.ayamgorengenak.capfits.utils.uriToFile
@@ -89,6 +90,11 @@ class CameraActivity : AppCompatActivity() {
                 if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) CameraSelector.DEFAULT_FRONT_CAMERA
                 else CameraSelector.DEFAULT_BACK_CAMERA
             startCamera()
+        }
+        binding.backCamera.setOnClickListener{
+            Intent(this@CameraActivity, HomeActivity::class.java).also {
+                startActivity(it)
+            }
         }
     }
 

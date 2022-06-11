@@ -50,6 +50,11 @@ class DetailProductActivity : AppCompatActivity() {
             Intent(this@DetailProductActivity, SuccessActivity::class.java).also {
                 startActivity(it)
             }
+        binding.backDetail.setOnClickListener{
+            Intent(this@DetailProductActivity, ResultActivity::class.java).also{
+                startActivity(it)
+            }
+        }
         }
 
         setContentView(binding.root)
